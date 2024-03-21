@@ -8,6 +8,4 @@ COPY . /MASP
 
 WORKDIR /MASP
 
-RUN pip install -r /MASP/requirements.txt
-
 CMD ["tail", "-f", "/dev/null"]
