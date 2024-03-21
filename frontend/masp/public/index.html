@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div>
-        <h1 id="message">Loading...</h1>
+    <div class="title-container">
+        <h1 id="title">Loading...</h1>
     </div>
+    <div class="field-container">
+        <form id="messageForm">
+            <input type="text" id="messageInput" placeholder="Ping me!">
+            <button type="submit">Send</button>     
+        </form>
+    </div>
+    <div class="response-container" id="messageStatus"></div>
     <script src="index.js"></script>
 </body>
 </html>

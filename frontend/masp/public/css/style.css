@@ -1,8 +1,32 @@
 body {
-    background-color: aqua;
+    background-color: palevioletred;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.title-container {
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 20vh;
+}
+
+.field-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.response-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+#title {
+    font-family: Impact, sans-serif;
+    font-size: 50px;
+    color: #333;
 }
