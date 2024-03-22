@@ -1,0 +1,868 @@
+[32mINFO[0m:     [22-03-2024 14:29:26] Set chroma_server_nofile to 65535
+[32mINFO[0m:     [22-03-2024 14:29:27] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component System
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component SqliteDB
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component Posthog
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [22-03-2024 14:29:27] Starting component SegmentAPI
+[32mINFO[0m:     [22-03-2024 14:29:27] Started server process [[36m27164[0m]
+[32mINFO[0m:     [22-03-2024 14:29:27] Waiting for application startup.
+[32mINFO[0m:     [22-03-2024 14:29:27] Application startup complete.
+[32mINFO[0m:     [22-03-2024 14:29:27] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [22-03-2024 14:42:58] Shutting down
+[32mINFO[0m:     [22-03-2024 14:42:58] Waiting for application shutdown.
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component System
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component SegmentAPI
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component Posthog
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component SqliteDB
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [22-03-2024 14:42:58] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [22-03-2024 14:42:58] Application shutdown complete.
+[32mINFO[0m:     [22-03-2024 14:42:58] Finished server process [[36m27164[0m]
+[32mINFO[0m:     [22-03-2024 15:14:09] Set chroma_server_nofile to 65535
+[32mINFO[0m:     [22-03-2024 15:14:10] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component System
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component SqliteDB
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component Posthog
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [22-03-2024 15:14:10] Starting component SegmentAPI
+[32mINFO[0m:     [22-03-2024 15:14:10] Started server process [[36m33999[0m]
+[32mINFO[0m:     [22-03-2024 15:14:10] Waiting for application startup.
+[32mINFO[0m:     [22-03-2024 15:14:10] Application startup complete.
+[32mINFO[0m:     [22-03-2024 15:14:10] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [22-03-2024 15:14:53] ::1:57300 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:14:53] ::1:57300 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:16:56] ::1:57343 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:16:56] ::1:57343 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:16:56] ::1:57344 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:16:56] ::1:57344 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/get HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:17:14] ::1:57356 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:17:14] ::1:57356 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[31mERROR[0m:    [22-03-2024 15:17:14] Collection test_collection already exists
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/local/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 74, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2144, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/auth/fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 415, in create_collection
+    return self._api.create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/api/segment.py", line 167, in create_collection
+    coll, created = self._sysdb.create_collection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/db/mixins/sysdb.py", line 225, in create_collection
+    raise UniqueConstraintError(f"Collection {name} already exists")
+chromadb.db.base.UniqueConstraintError: Collection test_collection already exists
+[32mINFO[0m:     [22-03-2024 15:17:15] ::1:57357 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [22-03-2024 15:18:28] ::1:57388 - "GET /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/count HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:19:09] ::1:57488 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:19:09] ::1:57488 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:19:09] ::1:57489 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:19:09] ::1:57489 - "GET /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/count HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:19:15] ::1:57489 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:19:15] ::1:57489 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/get HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:21:00] ::1:57526 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:21:34] ::1:57534 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:21:58] ::1:57534 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:22:31] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/get HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:22:37] ::1:57555 - "GET /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/count HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:23:01] ::1:57555 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:23:29] ::1:57555 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:23:29] ::1:57555 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [22-03-2024 15:23:29] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [22-03-2024 15:23:29] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:30] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:30] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:30] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:30] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:31] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:31] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:31] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:31] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:31] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:32] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:32] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:32] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:32] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:32] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:33] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:33] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:33] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:33] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:34] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:34] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:34] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:34] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:34] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:35] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:35] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:35] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:35] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:35] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:36] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:36] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:36] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:36] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:37] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:37] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:37] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:37] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:37] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:38] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:38] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:38] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:38] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:39] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:39] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:39] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:39] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:39] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:40] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:40] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:40] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:40] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:41] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:41] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:41] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:41] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:41] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:42] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:42] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:42] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:42] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:43] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:43] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:43] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:43] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:44] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:44] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:44] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:44] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:44] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:45] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:45] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:45] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:45] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:46] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:46] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:46] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:46] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:46] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:47] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:47] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:47] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:47] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:48] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:48] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:48] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:48] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:48] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:49] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:49] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:49] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:49] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:49] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:50] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:50] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:50] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:50] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:51] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:51] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:51] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:51] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:51] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:52] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:52] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:52] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:52] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:52] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:53] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:53] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:53] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:53] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:54] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:54] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:54] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:54] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:54] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:55] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:55] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:55] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:55] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:55] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:56] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:56] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:56] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:56] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:57] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:57] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:57] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:57] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:23:57] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:24:01] ::1:57555 - "GET /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/count HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:24:07] ::1:57555 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/get HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:25:27] ::1:57612 - "GET /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/count HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:25:54] ::1:57622 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:25:56] ::1:57622 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:25:57] ::1:57622 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:26:05] ::1:57622 - "GET /test_collection HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:26:16] ::1:57622 - "GET /test_collection HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:26:26] ::1:57622 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [22-03-2024 15:44:03] ::1:58018 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/get HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:53:35] ::1:58287 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:53:53] ::1:58287 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:54:10] ::1:58287 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:54:25] ::1:58287 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:54:40] ::1:58287 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:54:58] ::1:58287 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:56:31] ::1:58340 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:57:23] ::1:58370 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:57:37] ::1:58370 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:57:46] ::1:58370 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:58:01] ::1:58370 - "GET /api/v1/collections/test_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:58:02] ::1:58370 - "POST /api/v1/collections/8f77291a-4c99-41ae-b431-06554fab64ae/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:58:45] ::1:58396 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:58:45] ::1:58396 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:58:45] ::1:58397 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:59:03] ::1:58397 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 15:59:03] ::1:58397 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [22-03-2024 15:59:03] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [22-03-2024 15:59:03] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:04] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:04] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:04] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:04] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:04] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:05] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:05] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:05] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:05] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:05] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:06] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:06] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:06] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:06] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:07] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:07] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:07] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:07] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:07] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:08] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:08] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:08] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:08] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:08] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:09] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:09] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:09] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:09] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:10] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:10] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:10] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:10] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:10] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:11] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:11] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:11] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:11] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:11] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:12] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:12] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:12] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:12] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:13] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:13] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:13] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:13] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:13] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:14] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:14] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:14] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:14] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:15] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:15] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:15] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:15] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:15] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:16] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:16] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:16] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:16] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:16] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:17] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:17] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:17] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:17] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:18] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:18] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:18] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:18] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:19] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:19] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:19] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:19] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:19] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:20] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:20] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:20] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:20] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:21] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:21] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:21] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:21] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:21] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:22] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:22] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:22] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:22] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:22] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:23] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:23] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:23] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:23] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:24] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:24] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:24] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:24] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:24] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:25] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:25] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:25] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:25] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:25] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:26] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:26] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:26] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:26] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:27] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:27] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:27] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:27] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:27] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:28] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:28] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:28] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:28] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:28] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:29] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:29] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:29] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:29] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:30] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:30] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:30] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:30] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:30] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:31] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:31] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:31] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:31] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:32] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:32] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:32] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:32] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:32] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:33] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:33] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:33] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:33] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:34] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:34] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:34] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:34] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:34] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:35] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:35] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:35] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:35] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:36] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:36] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:36] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:36] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:37] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:37] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:37] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:37] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:37] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:38] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:38] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:38] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:38] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:39] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:39] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:39] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:39] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:39] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:40] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:40] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:40] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:40] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:41] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:41] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:41] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:41] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:41] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:42] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:42] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:42] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:42] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:43] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:43] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:43] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:43] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:43] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:44] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:44] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:44] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:44] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:44] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:45] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:45] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:45] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:45] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:46] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:46] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:46] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:46] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:46] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:47] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:47] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:47] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:47] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:48] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:48] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:48] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:48] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:48] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:49] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:49] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:49] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:49] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:50] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:50] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 15:59:50] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 16:00:14] ::1:58397 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:00:16] ::1:58397 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:01:38] ::1:58447 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:02:59] ::1:58478 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:03:28] ::1:58478 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:06:15] ::1:58536 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:07:56] ::1:58600 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:10:20] ::1:58647 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:10:43] ::1:58647 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:11:01] ::1:58647 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:11:10] ::1:58647 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:12:01] ::1:58683 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:14:38] ::1:58736 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:14:52] ::1:58736 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:14:57] ::1:58736 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:15:35] ::1:58756 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:16:13] ::1:58783 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:34:48] ::1:59335 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:34:48] ::1:59335 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:34:55] ::1:59340 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:35:06] ::1:59340 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:36:03] ::1:59417 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:36:03] ::1:59417 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:36:03] ::1:59418 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:36:07] ::1:59418 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:37:13] ::1:59445 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:37:23] ::1:59445 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:37:39] ::1:59445 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:38:51] ::1:59578 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:38:51] ::1:59578 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:38:51] ::1:59580 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:38:54] ::1:59580 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:40:09] ::1:59602 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:42:40] ::1:59750 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:42:40] ::1:59750 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:42:40] ::1:59751 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:42:43] ::1:59751 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:49:35] ::1:60019 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:49:35] ::1:60019 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:49:36] ::1:60020 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:49:38] ::1:60020 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:52:55] ::1:60195 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:52:55] ::1:60195 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:52:55] ::1:60196 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:52:58] ::1:60196 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:53:23] ::1:60196 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:53:56] ::1:60220 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:54:27] ::1:60230 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:58:13] ::1:60431 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:58:13] ::1:60431 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:58:13] ::1:60432 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 16:58:16] ::1:60432 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:00:32] ::1:60531 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:00:32] ::1:60531 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:00:32] ::1:60532 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:00:33] ::1:60532 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:06:19] ::1:60755 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:06:19] ::1:60755 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:06:19] ::1:60756 - "GET /api/v1/collections/other_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:06:20] ::1:60756 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:10:46] ::1:60880 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:10:52] ::1:60880 - "POST /api/v1/collections/20b93381-6f0f-4f72-8851-167df9fcb84f/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:13:31] ::1:61029 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:13:31] ::1:61029 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:13:31] ::1:61030 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:15:59] ::1:61089 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:15:59] ::1:61089 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[31mERROR[0m:    [22-03-2024 17:15:59] Collection open_collection already exists
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/local/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 74, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2144, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/auth/fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 415, in create_collection
+    return self._api.create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/api/segment.py", line 167, in create_collection
+    coll, created = self._sysdb.create_collection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/db/mixins/sysdb.py", line 225, in create_collection
+    raise UniqueConstraintError(f"Collection {name} already exists")
+chromadb.db.base.UniqueConstraintError: Collection open_collection already exists
+[32mINFO[0m:     [22-03-2024 17:15:59] ::1:61090 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [22-03-2024 17:16:09] ::1:61095 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:16:09] ::1:61095 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:16:09] ::1:61096 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:16:27] ::1:61096 - "GET /api/v1/collections/open2_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:16:30] ::1:61096 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [22-03-2024 17:16:30] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [22-03-2024 17:16:30] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:30] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:30] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:31] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:31] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:31] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:31] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:32] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:32] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:32] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/add HTTP/1.1" 201
+[32mINFO[0m:     [22-03-2024 17:16:40] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:16:50] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:16:58] ::1:61096 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:17:48] ::1:61178 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:17:48] ::1:61178 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[31mERROR[0m:    [22-03-2024 17:17:48] Collection open2_collection already exists
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/usr/local/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/routing.py", line 74, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2144, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/auth/fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 415, in create_collection
+    return self._api.create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/api/segment.py", line 167, in create_collection
+    coll, created = self._sysdb.create_collection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/i745616/Library/Caches/pypoetry/virtualenvs/masp-p4wU3s9_-py3.11/lib/python3.11/site-packages/chromadb/db/mixins/sysdb.py", line 225, in create_collection
+    raise UniqueConstraintError(f"Collection {name} already exists")
+chromadb.db.base.UniqueConstraintError: Collection open2_collection already exists
+[32mINFO[0m:     [22-03-2024 17:17:48] ::1:61179 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [22-03-2024 17:17:56] ::1:61186 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:17:56] ::1:61186 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:18:03] ::1:61187 - "GET /api/v1/collections/open2_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:18:04] ::1:61187 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:20:32] ::1:61284 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:20:32] ::1:61284 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:20:32] ::1:61285 - "GET /api/v1/collections/open2_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:20:32] ::1:61285 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:23:00] ::1:61429 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:23:00] ::1:61429 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:23:00] ::1:61430 - "GET /api/v1/collections/open2_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:23:00] ::1:61430 - "POST /api/v1/collections/a64b2141-a030-4362-a0b6-40f3ed0f1605/query HTTP/1.1" 200
+[32mINFO[0m:     [22-03-2024 17:28:09] Shutting down
+[32mINFO[0m:     [22-03-2024 17:28:09] Waiting for application shutdown.
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component System
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component SegmentAPI
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component Posthog
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component SqliteDB
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [22-03-2024 17:28:09] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [22-03-2024 17:28:09] Application shutdown complete.
+[32mINFO[0m:     [22-03-2024 17:28:09] Finished server process [[36m33999[0m]

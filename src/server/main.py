@@ -1,12 +1,17 @@
 import logging
 import requests
 import time
+import langchain
+import chromadb
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from bs4 import BeautifulSoup
+import bs4
 from logger import logger
-
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 app = Flask(__name__)
 CORS(app)
