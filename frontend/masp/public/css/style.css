@@ -1,6 +1,6 @@
 body {
-    background-color: palevioletred;
-    font-family: 'Courier New', Courier, monospace
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .title-container {
@@ -14,23 +14,26 @@ body {
 #chat-container {
     position: relative;
     width: 80%;
-    height: 70vh;
+    height: 60vh;
+    max-height: 60vh;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: flex-end;
     padding: 10px;
-    overflow-y: auto;
+    overflow-y: scroll;
     margin: 0 auto;
+    background-color: transparent;
+    border-top: 1px solid lightgrey;
+    border-image: linear-gradient(to right, transparent, lightgrey 20%, lightgrey 50%, lightgrey 80%, transparent) 1;
 }
 
 #chat-messages {
     overflow-y: auto;
-    padding: 10px;
+    padding: 10px;;
     display: flex;
 }
 
 .chat-bubble {
-    background-color: aquamarine;
+    background-color: greenyellow;
     color: #333;
     max-width: 55%;
     border-radius: 10px;
@@ -42,32 +45,50 @@ body {
 
 .user-bubble {
     align-self: flex-end;
+    background-color: greenyellow;
 }
 
 #messageForm {
     position: fixed;
-    bottom: 0;
+    border: none;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 70%;;
     padding: 10px;
     display: flex;
     align-content: center;
+    background-color: transparent;
+    flex: 1;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.input-container {
+    display: flex;
+    flex: 1;
+    align-items: right;
 }
 
 #messageInput {
+    border: none;
+    background-color: whitesmoke;
     flex: 1;
+    outline: none;
 }
 
-.response-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
+button[type="submit"] {
+    border: 1px solid lightslategray;
+    background-color: whitesmoke;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 
 #title {
-    font-family: Impact, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     color: #333;
 }

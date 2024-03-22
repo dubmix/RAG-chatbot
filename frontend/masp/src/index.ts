@@ -18,6 +18,8 @@ document.getElementById('messageForm')!.addEventListener('submit', async functio
 
     try {
 
+        (document.getElementById('messageInput') as HTMLInputElement).value = '';
+
         displayUserChatBubble(messageInput);
 
         const response = await fetch('http://127.0.0.1:5000/send-message', {

@@ -1,10 +1,12 @@
 import logging
 import requests
+import time
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from bs4 import BeautifulSoup
 from logger import logger
+
 
 app = Flask(__name__)
 CORS(app)
@@ -19,6 +21,7 @@ def send_message():
     message = request.json.get('message')
     print('Received message:', message)
     modified_message = 'backend says: ' + message + ' bro'
+    time.sleep(2)
     return jsonify({'status': 'Message received!', 'modified_message': modified_message})
 
 if __name__ == '__main__':
