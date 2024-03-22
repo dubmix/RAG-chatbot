@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/frontend/masp/node_modules
+/src/masp/node_modules
 /.pnp
 .pnp.js
 
@@ -20,7 +20,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/frontend/masp/README.md
+/src/masp/README.md
 
 # byte-compiled / optimized / DLL files
 __pycache__/
