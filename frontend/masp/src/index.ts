@@ -17,6 +17,9 @@ document.getElementById('messageForm')!.addEventListener('submit', async functio
     const messageInput = (document.getElementById('messageInput') as HTMLInputElement).value;
 
     try {
+
+        displayUserChatBubble(messageInput);
+
         const response = await fetch('http://127.0.0.1:5000/send-message', {
             method: 'POST',
             headers: {
@@ -28,7 +31,7 @@ document.getElementById('messageForm')!.addEventListener('submit', async functio
         if (response.ok) {
             const responseData = await response.json();
             const modifiedMessage = responseData.modified_message;
-            (document.getElementById('messageStatus') as HTMLDivElement).textContent = `Message received: ${modifiedMessage}`;
+            displayServerChatBubble(modifiedMessage)
         }
         else {
             throw new Error('Failed to send message')
@@ -37,6 +40,25 @@ document.getElementById('messageForm')!.addEventListener('submit', async functio
 
     catch (error) {
         console.error('Error sending message: ', error);
-        (document.getElementById('messageStatus') as HTMLDivElement).textContent = 'Failed to send message';
+        displayServerChatBubble('Failed to send message');
     }
 })
+
+function displayServerChatBubble(message: string) {
+    const chatMessagesElement = document.getElementById('chat-container')!;
+    const chatBubbleElement = createChatBubble(message, 'server-bubble');
+    chatMessagesElement.insertBefore(chatBubbleElement, chatMessagesElement.firstChild);
+}
+
+function displayUserChatBubble(message: string) {
+    const chatMessagesElement = document.getElementById('chat-container')!;
+    const chatBubbleElement = createChatBubble(message, 'user-bubble');
+    chatMessagesElement.insertBefore(chatBubbleElement, chatMessagesElement.firstChild);
+}
+
+function createChatBubble(message: string, bubbleClass: string) {
+    const chatBubbleElement = document.createElement('div');
+    chatBubbleElement.classList.add('chat-bubble', bubbleClass);
+    chatBubbleElement.textContent = message;
+    return chatBubbleElement;
+}

@@ -18,7 +18,7 @@ def title():
 def send_message():
     message = request.json.get('message')
     print('Received message:', message)
-    modified_message = message + ' (this is a response from the backend!)'
+    modified_message = 'backend says: ' + message + ' bro'
     return jsonify({'status': 'Message received!', 'modified_message': modified_message})
 
 if __name__ == '__main__':
