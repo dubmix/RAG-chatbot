@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /src/masp/node_modules
 /.pnp
@@ -22,6 +20,10 @@
 .env.test.local
 .env.production.local
 /src/masp/README.md
+
+# logs
+logs
+chroma.log
 
 # byte-compiled / optimized / DLL files
 __pycache__/
