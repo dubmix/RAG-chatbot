@@ -3,7 +3,7 @@ version: '3'
 services:
   elasticsearch:
     container_name: elasticsearch
-    build: ./src/Elastic
+    build: ./elk/elastic
     env_file:
       - .env
     ports:
@@ -14,24 +14,10 @@ services:
     restart: always
     networks:
       - network
-      
-  kibana:
-    container_name: kibana
-    build: ./src/Kibana
-    ports:
-      - "9400:9400"
-    environment:
-      - ELASTICSEARCH_URL=https://elasticsearch:9200
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ssl_data:/etc/kibana/ssl
-    networks:
-      - network
 
   logstash:
     container_name: logstash
-    build: ./src/Logstash
+    build: ./elk/logstash
     ports:
       - "9500:9500"
     env_file:
@@ -47,12 +33,27 @@ services:
   
   filebeat:
     container_name: filebeat
-    build: ./src/Filebeat
+    build: ./elk/filebeat
     volumes:
       - ./logs:/logs
+      - ./src/database:/chroma
       - ssl_data:/etc/filebeat/ssl
     depends_on:
       - elasticsearch
+    networks:
+      - network
+
+  kibana:
+    container_name: kibana
+    build: ./elk/kibana
+    ports:
+      - "9400:9400"
+    environment:
+      - ELASTICSEARCH_URL=https://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ssl_data:/etc/kibana/ssl
     networks:
       - network
 

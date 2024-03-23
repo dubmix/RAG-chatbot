@@ -16,6 +16,7 @@ ENV PATH=/usr/share/filebeat/bin:$PATH
 COPY filebeat.yml /etc/filebeat/filebeat.yml
 
 RUN mkdir /logs
+RUN mkdir /chroma
 
 RUN mkdir /etc/filebeat/ssl
 

@@ -40,8 +40,8 @@ server.ssl.key: /etc/kibana/ssl/localhost_key.pem
 #server.ssl.certificateAuthorities: ["/etc/kibana/ssl/ca_cert.crt"]
 
 #elasticsearch.hosts: ['https://elasticsearch:9200']
-#elasticsearch.username: team
-#elasticsearch.password: 42berlin
+#elasticsearch.username:
+#elasticsearch.password:
 #elasticsearch.ssl.certificateAuthorities: [/var/lib/kibana/<trusted_certificate_here>]
 
 # =================== System: Elasticsearch ===================
