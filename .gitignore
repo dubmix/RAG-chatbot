@@ -23,7 +23,9 @@
 
 # logs
 logs
-chroma.log
+
+# build files
+/src/masp/build
 
 # byte-compiled / optimized / DLL files
 __pycache__/

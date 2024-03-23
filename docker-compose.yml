@@ -1,61 +1,79 @@
 version: '3'
 
 services:
-  elasticsearch:
-    container_name: elasticsearch
-    build: ./elk/elastic
-    env_file:
-      - .env
+  nginx:
+    container_name: nginx
+    build: ./src/nginx
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "4443:4443"
     volumes:
-      - ssl_data:/etc/elasticsearch/ssl
+      - ssl_data:/etc/nginx/ssl
+    networks:
+      - network
     restart: always
-    networks:
-      - network
 
-  logstash:
-    container_name: logstash
-    build: ./elk/logstash
-    ports:
-      - "9500:9500"
-    env_file:
-      - .env
-    environment:
-      - ELASTICSEARCH_URL=https://elasticsearch:9200
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ssl_data:/etc/logstash/ssl
+  masp:
+    container_name: masp
+    build: ./src/masp
     networks:
       - network
+    restart: always
+
+  # elasticsearch:
+  #   container_name: elasticsearch
+  #   build: ./elk/elastic
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9300"
+  #   volumes:
+  #     - ssl_data:/etc/elasticsearch/ssl
+  #   restart: always
+  #   networks:
+  #     - network
+
+  # logstash:
+  #   container_name: logstash
+  #   build: ./elk/logstash
+  #   ports:
+  #     - "9500:9500"
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - ELASTICSEARCH_URL=https://elasticsearch:9200
+  #   depends_on:
+  #     - elasticsearch
+  #   volumes:
+  #     - ssl_data:/etc/logstash/ssl
+  #   networks:
+  #     - network
   
-  filebeat:
-    container_name: filebeat
-    build: ./elk/filebeat
-    volumes:
-      - ./logs:/logs
-      - ./src/database:/chroma
-      - ssl_data:/etc/filebeat/ssl
-    depends_on:
-      - elasticsearch
-    networks:
-      - network
+  # filebeat:
+  #   container_name: filebeat
+  #   build: ./elk/filebeat
+  #   volumes:
+  #     - ./logs:/logs
+  #     - ./src/database:/chroma
+  #     - ssl_data:/etc/filebeat/ssl
+  #   depends_on:
+  #     - elasticsearch
+  #   networks:
+  #     - network
 
-  kibana:
-    container_name: kibana
-    build: ./elk/kibana
-    ports:
-      - "9400:9400"
-    environment:
-      - ELASTICSEARCH_URL=https://elasticsearch:9200
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ssl_data:/etc/kibana/ssl
-    networks:
-      - network
+  # kibana:
+  #   container_name: kibana
+  #   build: ./elk/kibana
+  #   ports:
+  #     - "9400:9400"
+  #   environment:
+  #     - ELASTICSEARCH_URL=https://elasticsearch:9200
+  #   depends_on:
+  #     - elasticsearch
+  #   volumes:
+  #     - ssl_data:/etc/kibana/ssl
+  #   networks:
+  #     - network
 
 volumes:
   ssl_data:
