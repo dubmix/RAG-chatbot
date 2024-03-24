@@ -17,14 +17,17 @@ GPT_API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
 app = Flask(__name__)
 app.logger.handlers = logger.handlers
-# wip, using 2>> to redirect stderr logs to a file
+# wip, using 2>> to redirect stderr logs to flask.log
 app.logger.removeHandler(default_handler)
 app.logger.setLevel(logger.level)
 CORS(app)
 
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
-client = chromadb.HttpClient(host="localhost", port=8000)
+
+# for docker build, use this line:
+client = chromadb.HttpClient(host="chroma", port=8000)
+# client = chromadb.HttpClient(host="localhost", port=8000)
 
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
                 api_key=os.getenv("OPENAI_API_KEY"),
@@ -50,11 +53,11 @@ def validate_request(bubble_id: str):
     url = request.url
     logger.debug(f"{bubble_id} | HTTP request url: {url}")
 
-@app.route('/title')
+@app.route('/api/title')
 def title():
     return "MASP"
 
-@app.route('/process-request', methods=['POST'])
+@app.route('/api/process-request', methods=['POST'])
 def process_request():
     bubble_id = (uuid.uuid4().hex)[:6]
     logger.info(f"Processing request {bubble_id}")
@@ -96,4 +99,6 @@ def process_request():
     return jsonify({'status': f'Generated bubble {bubble_id}', 'answer': answer})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1')
+    # for docker build, use this line:
+    app.run(debug=True, host='0.0.0.0', port=5000)
+    # app.run(debug=True, host='127.0.0.1')
