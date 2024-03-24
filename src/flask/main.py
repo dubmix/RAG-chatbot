@@ -26,8 +26,8 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 # for docker build, use this line:
-client = chromadb.HttpClient(host="chroma", port=8000)
-# client = chromadb.HttpClient(host="localhost", port=8000)
+# client = chromadb.HttpClient(host="chroma", port=8000)
+client = chromadb.HttpClient(host="localhost", port=8000)
 
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
                 api_key=os.getenv("OPENAI_API_KEY"),
@@ -91,7 +91,7 @@ def process_request():
     model = TypeAdapter(GPTResponse).validate_python(gpt_response)
     answer = model.choices[0].message.content
     logger.debug(f"{bubble_id} | Answer sent to frontend: {answer}")
-    logger.info(f"{bubble_id} | Prompt tokens useed: {model.usage.prompt_tokens}")
+    logger.info(f"{bubble_id} | Prompt tokens used: {model.usage.prompt_tokens}")
     logger.info(f"{bubble_id} | Completion tokens used: {model.usage.completion_tokens}")
     logger.info(f"{bubble_id} | Total tokens used: {model.usage.total_tokens}")
 
@@ -100,5 +100,5 @@ def process_request():
 
 if __name__ == '__main__':
     # for docker build, use this line:
-    app.run(debug=True, host='0.0.0.0', port=5000)
-    # app.run(debug=True, host='127.0.0.1')
+    # app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='127.0.0.1')

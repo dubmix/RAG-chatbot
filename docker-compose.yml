@@ -1,52 +1,52 @@
 version: '3'
 
 services:
-  masp:
-    container_name: masp
-    build: ./src/masp
-    networks:
-      - network
-    volumes:
-      - logs:/logs
-    restart: always
+  # masp:
+  #   container_name: masp
+  #   build: ./src/masp
+  #   networks:
+  #     - network
+  #   volumes:
+  #     - logs:/logs
+  #   restart: always
 
-  nginx:
-    container_name: nginx
-    build: ./src/nginx
-    ports:
-      - "4443:4443"
-    volumes:
-      - ssl_data:/etc/nginx/ssl
-      - logs:/logs
-    networks:
-      - network
-    depends_on:
-      - masp
-    restart: always
+  # nginx:
+  #   container_name: nginx
+  #   build: ./src/nginx
+  #   ports:
+  #     - "4443:4443"
+  #   volumes:
+  #     - ssl_data:/etc/nginx/ssl
+  #     - logs:/logs
+  #   networks:
+  #     - network
+  #   depends_on:
+  #     - masp
+  #   restart: always
 
-  chroma:
-    container_name: chroma
-    build: ./src/chromadb
-    networks:
-      - network
-    volumes:
-      - logs:/logs
-    depends_on:
-      - masp
-    restart: always
+  # chroma:
+  #   container_name: chroma
+  #   build: ./src/chromadb
+  #   networks:
+  #     - network
+  #   volumes:
+  #     - logs:/logs
+  #   depends_on:
+  #     - masp
+  #   restart: always
 
-  flask:
-    container_name: flask
-    build: ./src/flask
-    networks:
-      - network
-    env_file:
-      - .env
-    depends_on:
-      - nginx
-    volumes:
-      - logs:/logs
-    restart: always
+  # flask:
+  #   container_name: flask
+  #   build: ./src/flask
+  #   networks:
+  #     - network
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - nginx
+  #   volumes:
+  #     - logs:/logs
+  #   restart: always
 
   elasticsearch:
     container_name: elasticsearch
@@ -58,8 +58,8 @@ services:
       - "9300:9300"
     volumes:
       - ssl_data:/etc/elasticsearch/ssl
-    depends_on:
-      - flask
+    # depends_on:
+    #   - flask
     restart: always
     networks:
       - network
@@ -85,7 +85,7 @@ services:
     build: ./elk/filebeat
     # for docker build, change from ./logs:/logs to logs:logs
     volumes:
-      - logs:/logs
+      - ./logs:/logs
       - ssl_data:/etc/filebeat/ssl
     depends_on:
       - elasticsearch
@@ -110,7 +110,7 @@ services:
 volumes:
   ssl_data:
   # for docker build, enable logs volume
-  logs:
+  # logs:
     
 networks:
   network:

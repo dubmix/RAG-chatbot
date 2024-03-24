@@ -2,7 +2,7 @@
 const messageElement = document.getElementById('title') as HTMLElement;
 
 // for docker build, change port 5000 to 4443
-fetch('http://127.0.0.1:4443/api/title')
+fetch('http://127.0.0.1:5000/api/title')
     .then(response => response.text())
     .then(data => {
         if (messageElement) {
@@ -24,7 +24,7 @@ document.getElementById('messageForm')!.addEventListener('submit', async functio
         displayUserChatBubble(messageInput);
 
         // for docker build, change port 5000 to 4443
-        const response = await fetch('http://127.0.0.1:4443/api/process-request', {
+        const response = await fetch('http://127.0.0.1:5000/api/process-request', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
