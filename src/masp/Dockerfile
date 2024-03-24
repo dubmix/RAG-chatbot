@@ -1,6 +1,7 @@
 FROM node:latest
 
-# COPY ./build/ /masp/build/
+RUN apt-get update && apt-get install -y vim
+
 RUN mkdir /masp
 
 COPY ./public/ /masp/public/
@@ -18,4 +19,3 @@ RUN npm run build
 EXPOSE 3000
 
 CMD [ "serve", "-s", "build" ]
-#CMD [ "tail", "-f", "/dev/null" ]

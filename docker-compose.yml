@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  masp:
+    container_name: masp
+    build: ./src/masp
+    networks:
+      - network
+    volumes:
+      - logs:/logs
+    restart: always
+
   nginx:
     container_name: nginx
     build: ./src/nginx
@@ -11,17 +20,8 @@ services:
       - logs:/logs
     networks:
       - network
-    restart: always
-
-  masp:
-    container_name: masp
-    build: ./src/masp
-    networks:
-      - network
     depends_on:
-      - flask
-    volumes:
-      - logs:/logs
+      - masp
     restart: always
 
   chroma:
@@ -31,6 +31,8 @@ services:
       - network
     volumes:
       - logs:/logs
+    depends_on:
+      - masp
     restart: always
 
   flask:
@@ -56,6 +58,8 @@ services:
       - "9300:9300"
     volumes:
       - ssl_data:/etc/elasticsearch/ssl
+    depends_on:
+      - flask
     restart: always
     networks:
       - network
@@ -79,6 +83,7 @@ services:
   filebeat:
     container_name: filebeat
     build: ./elk/filebeat
+    # for docker build, change from ./logs:/logs to logs:logs
     volumes:
       - logs:/logs
       - ssl_data:/etc/filebeat/ssl
@@ -104,6 +109,7 @@ services:
 
 volumes:
   ssl_data:
+  # for docker build, enable logs volume
   logs:
     
 networks:

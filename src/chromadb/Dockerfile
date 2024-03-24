@@ -1,12 +1,13 @@
 FROM python:3.11-slim-bookworm
 
+RUN apt-get update && apt-get install -y vim
+
 RUN pip install chromadb --break-system-packages
 
 RUN mkdir /chromadb
 RUN mkdir /logs
 
 COPY chroma_data/ /chromadb/chroma_data/
-# COPY chroma.log /chromadb/
 
 WORKDIR /chromadb
 
