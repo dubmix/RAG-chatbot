@@ -1,6 +1,8 @@
 FROM node:latest
 
 COPY ./build/ /masp/build/
+COPY ./public/ /masp/public/
+COPY ./src/ /masp/src/
 COPY package.json /masp/
 COPY package-lock.json /masp/
 
@@ -11,4 +13,5 @@ RUN npm install -g serve
 
 EXPOSE 3000
 
-CMD [ "serve", "-s", "build" ]
+CMD [ "tail", "-f", "/dev/null" ]
+#CMD [ "serve", "-s", "build" ]

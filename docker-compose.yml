@@ -17,6 +17,26 @@ services:
     build: ./src/masp
     networks:
       - network
+    depends_on:
+      - server
+    restart: always
+
+  chroma:
+    container_name: chroma
+    build: ./src/database
+    networks:
+      - network
+    restart: always
+
+  server:
+    container_name: server
+    build: ./src/server
+    networks:
+      - network
+    env_file:
+      - .env
+    depends_on:
+      - nginx
     restart: always
 
   # elasticsearch:
