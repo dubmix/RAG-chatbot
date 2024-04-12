@@ -55,7 +55,7 @@ def validate_request(bubble_id: str):
 
 @app.route('/api/title')
 def title():
-    return "MASP"
+    return "helpme.ai"
 
 @app.route('/api/process-request', methods=['POST'])
 def process_request():
