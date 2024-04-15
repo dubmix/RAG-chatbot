@@ -27,6 +27,7 @@ flowchart LR
         backend <--> filebeat
         backend <--> nginx
         backend <--> llmendpoint
+        backend <--> database
         nginx <--> frontend
         filebeat --> logstash
         logstash --> elastic
