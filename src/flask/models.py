@@ -1,20 +1,25 @@
-from pydantic import BaseModel
 from typing import Optional
 
-class GPTMessage(BaseModel):
+from pydantic import BaseModel
+
+
+class GPTEntry(BaseModel):
     role: str
     content: str
 
+
 class GPTChoice(BaseModel):
-    message: GPTMessage
+    message: GPTEntry
     logprobs: Optional[str]
     finish_reason: str
     index: int
+
 
 class GPTUsage(BaseModel):
     prompt_tokens: int
     completion_tokens: int
     total_tokens: int
+
 
 class GPTResponse(BaseModel):
     id: str

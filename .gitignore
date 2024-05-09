@@ -29,6 +29,8 @@ logs
 
 # byte-compiled / optimized / DLL files
 __pycache__/
+.pytest_cache/
+__init__.py
 *.py[cod]
 *$py.class
 
