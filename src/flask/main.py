@@ -4,8 +4,10 @@ import requests
 import chromadb
 import uuid
 
+from prompts import PROMPT
+from history import ConversationHistory
 from models import GPTResponse
-from pydantic import TypeAdapter
+from pydantic import TypeAdapter, BaseModel
 from flask import Flask, request, jsonify
 from flask.logging import default_handler
 from flask_cors import CORS
@@ -37,13 +39,16 @@ collection = client.get_or_create_collection(
                 name="test_collection", 
                 embedding_function=openai_ef)
 
+conversation = ConversationHistory()
 app.logger.info("Server ready")
+
 
 def stringify_headers(headers):
     header_string = ""
     for key, value in headers.items():
         header_string += f"{key}: {value}; "
     return header_string.rstrip("; ")
+
 
 def validate_request(bubble_id: str):
     headers = stringify_headers(request.headers)
@@ -53,9 +58,11 @@ def validate_request(bubble_id: str):
     url = request.url
     logger.debug(f"{bubble_id} | HTTP request url: {url}")
 
+
 @app.route('/api/title')
 def title():
     return "helpme.ai"
+
 
 @app.route('/api/process-request', methods=['POST'])
 def process_request():
@@ -69,14 +76,20 @@ def process_request():
     context = query["documents"]
     logger.debug(f"{bubble_id} | Context: {context}")
 
-    prompt = (f"""
-    Answer the question based only on the following context:
-    Context: {context} 
-    Question: {question}
-    """)
+    prompt = PROMPT.format(context=context, question=question)
+    logger.debug(f"{bubble_id} | Prompt: {prompt}")
+    messages = []
+    if conversation.get_history() == []:
+        pass
+    else:
+        messages = conversation.to_dict()
+    logger.debug(f"{bubble_id} | Conversation history: {messages}")
+    messages.append({"role": "user", "content": prompt})
+    conversation.add_entry("user", question)
+
     data = {
         "model": GPT_MODEL,
-        "messages": [{"role": "user", "content": prompt}],
+        "messages": messages,
         "temperature": 0.7
     }
     headers = {
@@ -90,6 +103,8 @@ def process_request():
 
     model = TypeAdapter(GPTResponse).validate_python(gpt_response)
     answer = model.choices[0].message.content
+    conversation.add_entry("assistant", answer)
+    
     logger.debug(f"{bubble_id} | Answer sent to frontend: {answer}")
     logger.info(f"{bubble_id} | Prompt tokens used: {model.usage.prompt_tokens}")
     logger.info(f"{bubble_id} | Completion tokens used: {model.usage.completion_tokens}")
