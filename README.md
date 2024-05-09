@@ -1,8 +1,9 @@
-# MASP
+## RAG
 
-Not the Museu de Arte de São Paulo!
+**Retrieval Augmented Generation**, or RAG, is an architectural approach that can improve the effiacy of **Large Language Model** (LLM) applications by leveraging **custom** data.
+This is done by retrieving data/documents relevant to a question or task and providing them as context for the LLM.
 
-## Setup
+## 🚧 Setup 🚧
 
 For the local dev setup, you can use the provided poetry file.
 
