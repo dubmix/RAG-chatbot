@@ -26,7 +26,44 @@ ipykernel = "^6.29.3"
 selenium = "^4.18.1"
 sentence-transformers = "^2.6.0"
 openai = "^1.14.2"
+python-dotenv = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.autopep8]
+max_line_length = 120
+ignore = "E265,E501,E203,E711"
+in-place = true
+recursive = true
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+
+[tool.isort]
+case_sensitive = false
+line_length = 120
+order_by_type = false
+profile = "black"
+
+[tool.ruff]
+line-length = 120
+ignore = ["E711", "E712", "F403"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # isort
+    "I",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*.ipynb" = ["E", "F", "I"]  # Be more lenient in notebooks
+"*/tests/*" = ["F811"]  # Ignore fixture "redefinition"
+"*/prompts.py" = ["E501"]  # Ignore line length 
+"*/__init__.py" = ["F401"]  # Ignore unused imports in module defs
