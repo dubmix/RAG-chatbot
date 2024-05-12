@@ -1,0 +1,14 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.title-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+}

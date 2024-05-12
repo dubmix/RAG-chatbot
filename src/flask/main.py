@@ -12,7 +12,7 @@ from models import GPTResponse
 from prompts import PROMPT
 from pydantic import TypeAdapter
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask.logging import default_handler
 
 GPT_MODEL = "gpt-3.5-turbo"
@@ -60,7 +60,7 @@ def validate_request(bubble_id: str):
 
 @app.route("/api/title")
 def title():
-    return "helpme.ai"
+    return jsonify(title="helpme.ai")
 
 
 @app.route("/api/process-request", methods=["POST"])
