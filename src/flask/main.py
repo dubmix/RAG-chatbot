@@ -63,6 +63,17 @@ def title():
     return jsonify(title="helpme.ai")
 
 
+@app.route("/api/savedmessages")
+def savedmessages():
+    #return jsonify([])
+    return jsonify(
+        [
+            { "id": 1, "text": "First string very long text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla" },
+            { "id": 2, "text": "Second First string very long text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla" },
+            { "id": 3, "text": "Third string" }
+        ])
+
+
 @app.route("/api/process-request", methods=["POST"])
 def process_request():
     bubble_id = (uuid.uuid4().hex)[:6]
