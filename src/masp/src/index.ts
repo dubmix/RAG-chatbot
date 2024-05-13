@@ -13,6 +13,11 @@ fetch('http://127.0.0.1:5000/api/title')
         console.error('Error fetching data: ', error)
     })
 
+document.getElementById("menu-button")!.addEventListener("click", function() {
+    const container = document.getElementById("container")!;
+    container.classList.toggle("menu-open");
+})
+
 document.getElementById('messageForm')!.addEventListener('submit', async function(event) {
     event.preventDefault();
 

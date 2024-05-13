@@ -1,0 +1,118 @@
+#chat-container {
+    position: relative;
+    width: 70%;
+    height: 60vh;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px;
+    overflow-y: scroll;
+    margin: 0 auto;
+    background-color: transparent;
+    border-top: 1px solid lightgrey;
+    border-image: linear-gradient(to right, transparent, lightgrey 20%, lightgrey 50%, lightgrey 80%, transparent) 1;
+}
+
+#messageForm {
+    position: relative;
+    border: none;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    width: 70%;;
+    padding: 10px;
+    display: flex;
+    align-content: center;
+    background-color: transparent;
+    flex: 1;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.input-container {
+    display: flex;
+    flex: 1;
+    align-items: right;
+}
+
+#messageInput {
+    border: none;
+    background-color: whitesmoke;
+    flex: 1;
+    outline: none;
+}
+
+#chat-messages {
+    overflow-y: auto;
+    padding: 10px;;
+    display: flex;
+}
+
+.chat-bubble {
+    background-color: #5525e3;
+    color: whitesmoke;
+    max-width: 55%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.5s ease forwards;
+    align-self: flex-start;
+}
+
+.user-bubble {
+    align-self: flex-end;
+    background-color: #5525e3;
+}
+
+button[type="submit"] {
+    border: 1px solid lightslategray;
+    background-color: whitesmoke;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.saved-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgba(137, 137, 137, 0.7); /* Slightly transparent grey */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0; /* Initially invisible */
+    animation: fadeInOut 2s ease-in-out; /* Fade in and out animation */
+  }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    10% {
+      opacity: 1; /* Fade in */
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    90% {
+      opacity: 1; /* Stay visible */
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      opacity: 0; /* Fade out */
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
