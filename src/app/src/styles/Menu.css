@@ -11,13 +11,13 @@
 
 .menu {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    background-color: whitesmoke;
+    top: -10px;
+    bottom: 150px;
+    left: -10px;
+    width: 80px;
     transition: transform 0.3s ease;
     transform: translateX(0%) translateZ(0);
-    z-index: 0;
+    z-index: 1;
 }
 
 .menu ul {
@@ -48,17 +48,25 @@
   
 .menu-content {
     position: absolute;
-    top: 0;
-    left: -200px; /* Start off-screen */
-    width: 130px;
-    height: 100%;
-    transition: left 0.3s ease; /* Smooth transition */
+    left: -200px;
+    right: 50px;
+    padding-top: 18px;
+    padding-left: 30px;
+    padding-right: 50px;
+    background-color: whitesmoke;
+    border-right: 1px solid lightgrey;
+    border-top: none;
+    border-bottom: none;
+    width: 100px;
+    transform: translateX(-35%);
+    height: 120%;
+    transition: left 0.3s ease;
 }
 
 .menu-content.open {
-    left: 0; /* Slide into view */
-  }
+    left: 0;
+}
 
-  .menu-button.open {
+.menu-button.open {
     transform: rotate(180deg);
-  }
+}
