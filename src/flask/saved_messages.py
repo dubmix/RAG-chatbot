@@ -1,8 +1,10 @@
 from pydantic import BaseModel
 
+
 class SavedMessage(BaseModel):
     id: int
     text: str
+
 
 class SavedMessages:
     def __init__(self):
@@ -13,7 +15,7 @@ class SavedMessages:
 
     def get_messages(self):
         return self.saved_messages
-    
+
     def get_messages_text(self):
         return [{"id": message.id, "text": message.text} for message in self.saved_messages]
 
@@ -31,4 +33,3 @@ class SavedMessages:
             if saved_message.id == index:
                 self.saved_messages.remove(saved_message)
         return
-        

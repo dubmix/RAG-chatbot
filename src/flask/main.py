@@ -9,11 +9,11 @@ from flask_cors import CORS
 from history import ConversationHistory
 from logger import logger
 from models import GPTResponse
-from saved_messages import SavedMessages, SavedMessage
 from prompts import PROMPT
 from pydantic import TypeAdapter
+from saved_messages import SavedMessage, SavedMessages
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request
 from flask.logging import default_handler
 
 GPT_MODEL = "gpt-3.5-turbo"
