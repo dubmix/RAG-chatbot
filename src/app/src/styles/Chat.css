@@ -60,6 +60,13 @@
     align-self: flex-start;
 }
 
+.star {
+    position: absolute;
+    font-size: 20px;
+    bottom: -9px;
+    right: -10px;
+}
+
 .user-bubble {
     align-self: flex-end;
     background-color: #5525e3;
