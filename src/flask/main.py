@@ -9,6 +9,7 @@ from flask_cors import CORS
 from history import ConversationHistory
 from logger import logger
 from models import GPTResponse
+from saved_messages import SavedMessages, SavedMessage
 from prompts import PROMPT
 from pydantic import TypeAdapter
 
@@ -39,6 +40,8 @@ openai_ef = embedding_functions.OpenAIEmbeddingFunction(
 collection = client.get_or_create_collection(name="test_collection", embedding_function=openai_ef)
 
 conversation = ConversationHistory()
+saved_messages = SavedMessages()
+message_id = 0
 app.logger.info("Server ready")
 
 
@@ -65,13 +68,23 @@ def title():
 
 @app.route("/api/savedmessages")
 def savedmessages():
-    #return jsonify([])
-    return jsonify(
-        [
-            { "id": 1, "text": "First string very long text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla" },
-            { "id": 2, "text": "Second First string very long text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla text just for testing purposes blablablabla" },
-            { "id": 3, "text": "Third string" }
-        ])
+    return jsonify(saved_messages.get_messages_text())
+
+
+@app.route("/api/save-message", methods=["POST"])
+def add_savedmessage():
+    global message_id
+
+    try:
+        data = request.json
+        for saved_message in saved_messages.get_messages():
+            if saved_message.text == data["message"]:
+                return jsonify({"error": "Message already saved"}), 400
+        saved_messages.add_message(SavedMessage(id=message_id, text=data["message"]))
+        message_id += 1
+        return jsonify({"status": "Message saved"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 
 @app.route("/api/process-request", methods=["POST"])
