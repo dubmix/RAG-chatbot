@@ -11,13 +11,17 @@
 
 .menu {
     position: absolute;
-    top: -10px;
-    bottom: 150px;
-    left: -10px;
-    width: 80px;
-    transition: transform 0.3s ease;
-    transform: translateX(0%) translateZ(0);
-    z-index: 1;
+    background-color: orange;
+    border-right: 1px solid blue;
+    left: -150px;
+    width: 150px;
+    transition: left 0.3s ease;
+    top: 0;
+    bottom: 0;
+}
+
+.menu.open {
+    left: 0;
 }
 
 .menu ul {
@@ -53,8 +57,8 @@
     padding-top: 18px;
     padding-left: 30px;
     padding-right: 50px;
-    background-color: whitesmoke;
-    border-right: 1px solid lightgrey;
+    background-color: orange;
+    border-right: 1px solid blue;
     border-top: none;
     border-bottom: none;
     width: 100px;

@@ -1,8 +1,7 @@
 #chat-container {
     position: relative;
     width: 70%;
-    height: 60vh;
-    max-height: 60vh;
+    height: 70vh;
     display: flex;
     flex-direction: column-reverse;
     padding: 10px;
