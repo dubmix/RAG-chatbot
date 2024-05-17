@@ -6,11 +6,11 @@ import './styles/App.css';
 
 function Main() {
   return (
-    <div className="app" >
+    <>
       <Menu />
       <Title />
       <Chat />
-    </div>
+    </>
   );
 }
 

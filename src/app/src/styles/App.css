@@ -1,18 +1,11 @@
-.app {
+.fadeIn {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100vh;
     background-color: #282c34;
     bottom: 0;
-}
-
-.fadeIn {
-animation: 0.5s fadeIn forwards;
-}
-
-.fadeOut {
-animation: 0.5s fadeOut forwards;
+    animation: 0.5s fadeIn forwards;
+    min-height: 30vh;
 }
 
 @keyframes fadeIn {
@@ -23,16 +16,5 @@ animation: 0.5s fadeOut forwards;
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(-20px);
     }
 }

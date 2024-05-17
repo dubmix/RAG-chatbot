@@ -1,14 +1,14 @@
 .image-container {
+    margin: 20px 200px;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    min-width: 100px;
 }
 
 .title-container {
-    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: auto;
-    overflow: hidden;
+    min-width: 100px;
 }

@@ -6,11 +6,11 @@ import './styles/App.css';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <>
       <Router>
         <Content />
       </Router>
-    </div>
+    </>
   );
 };
 

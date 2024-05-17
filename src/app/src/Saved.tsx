@@ -5,11 +5,11 @@ import TableComponent from './components/SavedMessages.tsx';
 
 function Saved() {
   return (
-    <div>
+    <>
       <Title />
       <Menu />
       <TableComponent />
-    </div>
+    </>
   );
 }
 

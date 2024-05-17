@@ -1,32 +1,24 @@
 #chat-container {
-    position: relative;
-    width: 70%;
-    height: 70vh;
+    background-color: transparent;
     display: flex;
     flex-direction: column-reverse;
-    padding: 10px;
     overflow-y: scroll;
     margin: 0 auto;
-    background-color: transparent;
-    border-top: 1px solid lightgrey;
-    border-image: linear-gradient(to right, transparent, lightgrey 20%, lightgrey 50%, lightgrey 80%, transparent) 1;
+    padding: 0 15px;
+    min-width: 200px;
+    min-height: 100px;
+    max-width: 700px;
+    height: calc(90vh - 250px);
 }
 
 #messageForm {
-    position: relative;
-    border: none;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateZ(0);
-    width: 60%;;
-    padding: 10px;
-    display: flex;
-    align-content: center;
-    background-color: transparent;
-    flex: 1;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    padding: 5px 10px;
+    background-color: orange;
+    padding: 0 15px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: calc((100% - 500px) / 2);
+    min-width: 100px;
+    max-width: 500px;
 }
 
 .input-container {
@@ -37,7 +29,7 @@
 
 #messageInput {
     border: none;
-    background-color: whitesmoke;
+    background-color: greenyellow;
     flex: 1;
     outline: none;
 }
