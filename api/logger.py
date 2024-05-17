@@ -21,7 +21,7 @@ class ColoredLogs(logging.StreamHandler):
 
 # for docker build, use this line:
 # file_handler = logging.FileHandler(f"/logs/{filename}")
-file_handler = logging.FileHandler(f"../../logs/{filename}")
+file_handler = logging.FileHandler(f"../logs/{filename}")
 file_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(asctime)s - %(filename)s - %(levelname)s - %(message)s")
 file_handler.setFormatter(formatter)

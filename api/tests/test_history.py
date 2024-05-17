@@ -1,6 +1,3 @@
-import sys
-sys.path.append("/Users/i745616/Desktop/RAG-chatbot/src/flask")
-
 import pytest
 from history import ConversationHistory
 
