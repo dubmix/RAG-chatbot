@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     min-width: 100px;
+    margin-bottom: 0;
+    animation: 0.5s fadeIn forwards;
 }
 
 .title-container {
@@ -11,4 +13,5 @@
     display: flex;
     justify-content: center;
     min-width: 100px;
+    animation: 0.5s fadeIn forwards;
 }

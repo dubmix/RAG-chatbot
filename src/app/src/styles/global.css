@@ -2,3 +2,45 @@ body {
     background-color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    10% {
+      opacity: 1; /* Fade in */
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    90% {
+      opacity: 1; /* Stay visible */
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      opacity: 0; /* Fade out */
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+  
