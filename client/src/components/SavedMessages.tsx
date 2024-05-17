@@ -16,7 +16,7 @@ const TableComponent: React.FC = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/savedmessages')
+            const response = await fetch('http://127.0.0.1:5000/api/saved_messages')
             const data: DataItem[] = await response.json();
             setData(data);
         } catch (error) {
@@ -45,7 +45,7 @@ const TableComponent: React.FC = () => {
     );
 };
 
-const renderData = (data: DataItem[], toggleFullText: (id:number) => void) => {
+const renderData = (data: DataItem[], toggleFullText: (id: number) => void) => {
     const maxPreviewLength = 30;
     const items = [];
 

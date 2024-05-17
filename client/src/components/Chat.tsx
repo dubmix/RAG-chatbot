@@ -12,7 +12,7 @@ const Chat: React.FC = () => {
         setMessageInput('');
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/process-request', {
+            const response = await fetch('http://127.0.0.1:5000/api/process_request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ const Chat: React.FC = () => {
 
     const handleDoubleClick = (message: string) => {
         
-        fetch('http://127.0.0.1:5000/api/save-message', {
+        fetch('http://127.0.0.1:5000/api/save_message', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

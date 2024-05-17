@@ -45,15 +45,15 @@ message_id = 0
 app.logger.info("Server ready")
 
 
-def stringify_headers(headers):
+def _stringify_headers(headers):
     header_string = ""
     for key, value in headers.items():
         header_string += f"{key}: {value}; "
     return header_string.rstrip("; ")
 
 
-def validate_request(bubble_id: str):
-    headers = stringify_headers(request.headers)
+def _validate_request(bubble_id: str):
+    headers = _stringify_headers(request.headers)
     logger.debug(f"{bubble_id} | HTTP request headers: {headers}")
     method = request.method
     logger.debug(f"{bubble_id} | HTTP request method: {method}")
@@ -61,17 +61,27 @@ def validate_request(bubble_id: str):
     logger.debug(f"{bubble_id} | HTTP request url: {url}")
 
 
+def _generate_llm_log(bubble_id: str, context: list | None, model: GPTResponse, data: dict, gpt_response: dict):
+    logger.info(f"{bubble_id} | Context: {context}")
+    logger.info(f"{bubble_id} | Request made to OpenAI: {data}")
+    logger.info(f"{bubble_id} | Response from OpenAI: {gpt_response}")
+    logger.info(f"{bubble_id} | Prompt tokens used: {model.usage.prompt_tokens}")
+    logger.info(f"{bubble_id} | Completion tokens used: {model.usage.completion_tokens}")
+    logger.info(f"{bubble_id} | Total tokens used: {model.usage.total_tokens}")
+    logger.info(f"Generated bubble {bubble_id}")
+
+
 @app.route("/api/title")
 def title():
     return jsonify(title="helpme.ai")
 
 
-@app.route("/api/savedmessages")
-def savedmessages():
+@app.route("/api/saved_messages")
+def save_dmessages():
     return jsonify(saved_messages.get_messages_text())
 
 
-@app.route("/api/save-message", methods=["POST"])
+@app.route("/api/save_message", methods=["POST"])
 def add_savedmessage():
     global message_id
 
@@ -87,47 +97,34 @@ def add_savedmessage():
         return jsonify({"error": str(e)}), 400
 
 
-@app.route("/api/process-request", methods=["POST"])
+@app.route("/api/process_request", methods=["POST"])
 def process_request():
     bubble_id = (uuid.uuid4().hex)[:6]
     logger.info(f"Processing request {bubble_id}")
-    validate_request(bubble_id)
+    _validate_request(bubble_id)
     question = request.json.get("request")
-    logger.debug(f"{bubble_id} | Received question from frontend: {question}")
 
     query = collection.query(query_texts=[question], n_results=2, include=["documents"])
     context = query["documents"]
-    logger.debug(f"{bubble_id} | Context: {context}")
 
     prompt = PROMPT.format(context=context, question=question)
-    logger.debug(f"{bubble_id} | Prompt: {prompt}")
     messages = []
     if conversation.get_history() == []:
         pass
     else:
         messages = conversation.to_dict()
-    logger.debug(f"{bubble_id} | Conversation history: {messages}")
     messages.append({"role": "user", "content": prompt})
     conversation.add_entry("user", question)
 
     data = {"model": GPT_MODEL, "messages": messages, "temperature": 0.7}
-
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
-
-    logger.debug(f"{bubble_id} | Request made to OpenAI: {data}")
     gpt_response = (requests.post(GPT_API_ENDPOINT, headers=headers, json=data)).json()
-    logger.debug(f"{bubble_id} | Response from OpenAI: {gpt_response}")
 
     model = TypeAdapter(GPTResponse).validate_python(gpt_response)
     answer = model.choices[0].message.content
     conversation.add_entry("assistant", answer)
 
-    logger.debug(f"{bubble_id} | Answer sent to frontend: {answer}")
-    logger.info(f"{bubble_id} | Prompt tokens used: {model.usage.prompt_tokens}")
-    logger.info(f"{bubble_id} | Completion tokens used: {model.usage.completion_tokens}")
-    logger.info(f"{bubble_id} | Total tokens used: {model.usage.total_tokens}")
-
-    logger.info(f"Generated bubble {bubble_id}")
+    _generate_llm_log(bubble_id, context, model, data, gpt_response)
     return jsonify({"status": f"Generated bubble {bubble_id}", "answer": answer})
 
 
