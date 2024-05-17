@@ -1,51 +1,46 @@
 #chat-container {
-    position: relative;
-    width: 70%;
-    height: 60vh;
-    max-height: 60vh;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column-reverse;
-    padding: 10px;
     overflow-y: scroll;
     margin: 0 auto;
-    background-color: transparent;
+    padding: 0 15px;
+    min-width: 200px;
+    min-height: 100px;
+    max-width: 700px;
+    height: calc(90vh - 250px);
+    z-index: 0;
     border-top: 1px solid lightgrey;
-    border-image: linear-gradient(to right, transparent, lightgrey 20%, lightgrey 50%, lightgrey 80%, transparent) 1;
+    border-image: linear-gradient(to right, transparent, lightgrey 10%, lightgrey 50%, lightgrey 90%, transparent) 1;
+    animation: 0.5s fadeIn forwards;
 }
 
 #messageForm {
-    position: relative;
-    border: none;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateZ(0);
-    width: 60%;;
-    padding: 10px;
-    display: flex;
-    align-content: center;
-    background-color: transparent;
-    flex: 1;
-    border: 1px solid lightgrey;
+    background-color: whitesmoke;
+    border: 1px solid lightslategray;
+    padding: 15px;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 0 15px;
+    margin: 30px auto;
+    min-width: 100px;
+    max-width: 500px;
+    animation: 0.5s fadeIn forwards;
 }
 
 .input-container {
     display: flex;
-    flex: 1;
-    align-items: right;
 }
 
 #messageInput {
     border: none;
-    background-color: whitesmoke;
+    background-color: transparent;
     flex: 1;
     outline: none;
 }
 
 #chat-messages {
     overflow-y: auto;
-    padding: 10px;;
+    padding: 10px;
     display: flex;
 }
 
@@ -63,8 +58,8 @@
 .star {
     position: absolute;
     font-size: 20px;
-    bottom: -9px;
-    right: -10px;
+    bottom: -11px;
+    right: -7px;
 }
 
 .user-bubble {
@@ -77,8 +72,9 @@ button[type="submit"] {
     background-color: whitesmoke;
     color: black;
     padding: 5px 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     border-radius: 10px;
-    margin-left: 10px;
 }
 
 .saved-message {
@@ -86,40 +82,10 @@ button[type="submit"] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background-color: rgba(137, 137, 137, 0.7); /* Slightly transparent grey */
-    color: #fff; /* White text */
+    background-color: rgba(137, 137, 137, 0.7);
+    color: #fff;
     padding: 10px 20px;
     border-radius: 8px;
-    opacity: 0; /* Initially invisible */
-    animation: fadeInOut 2s ease-in-out; /* Fade in and out animation */
-  }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px)
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0)
-    }
-}
-
-@keyframes fadeInOut {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0);
-    }
-    10% {
-      opacity: 1; /* Fade in */
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-    90% {
-      opacity: 1; /* Stay visible */
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-    100% {
-      opacity: 0; /* Fade out */
-      transform: translate(-50%, -50%) scale(0);
-    }
+    opacity: 0;
+    animation: fadeInOut 2s ease-in-out;
   }

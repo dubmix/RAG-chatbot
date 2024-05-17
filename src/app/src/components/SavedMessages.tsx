@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/SavedMessages.css';
+import '../styles/saved.css';
 
 interface DataItem {
     id: number;
@@ -65,7 +65,6 @@ const renderData = (data: DataItem[], toggleFullText: (id:number) => void) => {
     }
     return items;
 };
-
 
 export default TableComponent;
 

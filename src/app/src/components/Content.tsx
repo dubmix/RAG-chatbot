@@ -6,32 +6,15 @@ import Saved from '../Saved.tsx';
 import About from '../About.tsx';
 
 function Content() {
-  const location = useLocation();
-
-  const [displayLocation, setDisplayLocation] = useState(location);
-  const [transitionStage, setTransitionStage] = useState('fadeIn');
-
-  useEffect(() => {
-    if (location !== displayLocation) setTransitionStage('fadeOut');
-  }, [location, displayLocation]);
-
   return (
-    <div
-        className={`${transitionStage}`}
-        onAnimationEnd={() => {
-            if (transitionStage === 'fadeOut') {
-                setTransitionStage('fadeIn');
-                setDisplayLocation(location);
-            }
-        }}
-    >
-        <Routes location={displayLocation}>
+    <>
+        <Routes>
             <Route path='/' element={<Main/>} />
             <Route path='/chat' element={<Main/>} />
             <Route path='/saved' element={<Saved/>} />
             <Route path='/about' element={<About/>} />
         </Routes>
-    </div>
+    </>
   );
 }
 

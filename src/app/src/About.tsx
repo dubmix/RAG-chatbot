@@ -4,10 +4,10 @@ import Title from './components/Title.tsx';
 
 const About = () => {
   return (
-    <div>
+    <>
       <Title />
       <Menu />
-    </div>
+    </>
   );
 };
 

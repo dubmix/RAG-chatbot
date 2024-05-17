@@ -5,11 +5,11 @@ import Chat from './components/Chat.tsx';
 
 function Main() {
   return (
-    <div>
+    <>
       <Menu />
       <Title />
       <Chat />
-    </div>
+    </>
   );
 }
 
