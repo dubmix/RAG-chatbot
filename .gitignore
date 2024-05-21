@@ -7,6 +7,9 @@
 # testing
 /coverage
 
+# data
+/chromadb/data
+
 # production
 /build
 

@@ -37,7 +37,7 @@ openai_ef = embedding_functions.OpenAIEmbeddingFunction(
     api_key=os.getenv("OPENAI_API_KEY"), model_name="text-embedding-3-small"
 )
 
-collection = client.get_or_create_collection(name="test_collection", embedding_function=openai_ef)
+collection = client.get_or_create_collection(name="asylumineurope", embedding_function=openai_ef)
 
 conversation = ConversationHistory()
 saved_messages = SavedMessages()
