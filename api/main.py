@@ -27,7 +27,7 @@ app.logger.setLevel(logger.level)
 CORS(app)
 
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY") #type: ignore
 
 # for docker build, use this line:
 # client = chromadb.HttpClient(host="chroma", port=8000)

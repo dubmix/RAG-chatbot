@@ -87,7 +87,14 @@ const Chat: React.FC = () => {
     return (
         <>
         <div id="chat-container">
+            <div className="help-bubbles">
+                <ul>
+                    <li>Test 1</li>
+                    <li>Test 2</li>
+                </ul>
+            </div>
         </div>
+
 
         {showSavedMessage && <div className="saved-message">Message saved!</div>}
 
