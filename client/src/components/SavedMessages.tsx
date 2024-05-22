@@ -80,13 +80,13 @@ const TableComponent: React.FC = () => {
 const renderData = (data: DataItem[], toggleFullText: (id: number) => void) => {
     const maxPreviewLength = 30;
     const items = [];
-
+    
     for (let i = 0; i < data.length; i++) {
         const previewText = data[i].text.length > maxPreviewLength
-            ? data[i].text.substring(0, maxPreviewLength) + '...' 
-            : data[i].text;
+        ? data[i].text.substring(0, maxPreviewLength) + '...' 
+        : data[i].text;
         const divContent = data[i].showFullText ? data[i].text : previewText;
-        items.push(
+        items.push( // @ts-ignore
         <>
         <div className="bubble-container">
             <div className="date">

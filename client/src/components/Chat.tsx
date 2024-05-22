@@ -64,7 +64,7 @@ const Chat: React.FC = () => {
             const chatBubbleElement = document.querySelectorAll('.chat-bubble');
             chatBubbleElement.forEach((chatBubbleElement) => {
                 if (chatBubbleElement.textContent === message) {
-                    const starElement = document.createElement('span');
+                    const starElement = document.createElement('div');
                     starElement.className = 'star';
                     starElement.innerHTML = '<img src="star_yellow.png" alt="Star">';
                     chatBubbleElement.appendChild(starElement);
