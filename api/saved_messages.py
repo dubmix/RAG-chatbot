@@ -1,9 +1,11 @@
 from pydantic import BaseModel
+from datetime import datetime
 
 
 class SavedMessage(BaseModel):
     id: int
     text: str
+    date: str
 
 
 class SavedMessages:
@@ -16,8 +18,8 @@ class SavedMessages:
     def get_messages(self):
         return self.saved_messages
 
-    def get_messages_text(self):
-        return [{"id": message.id, "text": message.text} for message in self.saved_messages]
+    def get_all_messages(self):
+        return [{"id": message.id, "text": message.text, "date": message.date} for message in self.saved_messages]
 
     def clear_messages(self):
         self.saved_messages = []

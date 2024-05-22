@@ -12,6 +12,7 @@ from models import GPTResponse
 from prompts import PROMPT
 from pydantic import TypeAdapter
 from saved_messages import SavedMessage, SavedMessages
+from datetime import datetime
 
 from flask import Flask, jsonify, request
 from flask.logging import default_handler
@@ -40,7 +41,7 @@ openai_ef = embedding_functions.OpenAIEmbeddingFunction(
 collection = client.get_or_create_collection(name="asylumineurope", embedding_function=openai_ef)
 
 conversation = ConversationHistory()
-saved_messages = SavedMessages()
+saved_msgs = SavedMessages()
 message_id = 0
 app.logger.info("Server ready")
 
@@ -77,20 +78,21 @@ def title():
 
 
 @app.route("/api/saved_messages")
-def save_dmessages():
-    return jsonify(saved_messages.get_messages_text())
+def saved_messages():
+    return jsonify(saved_msgs.get_all_messages())
 
 
 @app.route("/api/save_message", methods=["POST"])
 def add_savedmessage():
     global message_id
+    print('date', datetime.now().isoformat())
 
     try:
         data = request.json
-        for saved_message in saved_messages.get_messages():
-            if saved_message.text == data["message"]:
+        for saved_message in saved_msgs.get_messages():
+            if saved_message.text == data["message"]: #type: ignore
                 return jsonify({"error": "Message already saved"}), 400
-        saved_messages.add_message(SavedMessage(id=message_id, text=data["message"]))
+        saved_msgs.add_message(SavedMessage(id=message_id, text=data["message"], date=datetime.now().isoformat())) #type: ignore
         message_id += 1
         return jsonify({"status": "Message saved"}), 201
     except Exception as e:

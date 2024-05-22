@@ -4,6 +4,7 @@ import '../styles/chat.css';
 const Chat: React.FC = () => {
     const [messageInput, setMessageInput] = useState<string>('');
     const [showSavedMessage, setShowSavedMessage] = useState<boolean>(false);
+    const [showHelpBubbles, setShowHelpBubbles] = useState<boolean>(true);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -65,12 +66,12 @@ const Chat: React.FC = () => {
                 if (chatBubbleElement.textContent === message) {
                     const starElement = document.createElement('span');
                     starElement.className = 'star';
-                    starElement.innerHTML = '⭐';
+                    starElement.innerHTML = '<img src="star_yellow.png" alt="Star">';
                     chatBubbleElement.appendChild(starElement);
                 }
             });
         })
-        .catch(error => console.error('Error saving message: ', error));
+        .catch(error => console.error(error));
     };
 
     const createChatBubble = (message: string, bubbleType: string) => {
@@ -87,18 +88,15 @@ const Chat: React.FC = () => {
     return (
         <>
         <div id="chat-container">
-            <div className="help-bubbles">
-                <ul>
-                    <li>Test 1</li>
-                    <li>Test 2</li>
-                </ul>
+            <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
+                    <div className="help-bubble">What are my rights as a refugee?</div>
+                    <div className="help-bubble">How do I apply for asylum in Germany?</div>
             </div>
         </div>
 
-
         {showSavedMessage && <div className="saved-message">Message saved!</div>}
 
-        <form id="messageForm" onSubmit={handleSubmit}>
+        <form id="messageForm" onSubmit={handleSubmit} onFocus={() => setShowHelpBubbles(false)}>
             <div className="input-container">
                 <input type="text" 
                     id="messageInput" 

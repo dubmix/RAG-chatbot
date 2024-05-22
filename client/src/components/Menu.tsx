@@ -16,9 +16,9 @@ const Menu = () => {
     </button>
     <div id="menu" className={`menu ${!menuOpen ? 'open' : ''}`}>
         <ul>
-            <li><img src="helpme.ai.png" alt="chat icon" className="icon"/> <a href="chat">Chat</a></li>
-            <li><img src="helpme.ai.png" alt="chat icon" className="icon"/> <a href="saved">Saved</a></li>
-            <li><img src="helpme.ai.png" alt="chat icon" className="icon"/> <a href=" about">About</a></li>
+            <li><a href="chat">Chat</a></li>
+            <li><a href="saved">Saved</a></li>
+            <li><a href="about">About</a></li>
         </ul>
     </div>
     </>

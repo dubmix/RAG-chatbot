@@ -4,7 +4,6 @@
     flex-direction: column-reverse;
     overflow-y: scroll;
     margin: 0 auto;
-    padding: 0 15px;
     min-width: 200px;
     min-height: 100px;
     max-width: 700px;
@@ -45,9 +44,26 @@
 }
 
 .help-bubbles {
-    background-color: red;
     height: 60px;
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(101, 101, 101);
+    font-size: 15px;
+}
+
+.help-bubble {
+    flex: 1;
+    border: 1px dashed lightslategray;
+    margin: 0 3px;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .chat-bubble {
@@ -62,10 +78,12 @@
 }
 
 .star {
-    position: absolute;
-    font-size: 20px;
-    bottom: -11px;
-    right: -7px;
+    position: fixed;
+    display: inline-block;
+    right: 0px;
+    top: 33px;
+    transform: scale(0.6);
+
 }
 
 .user-bubble {

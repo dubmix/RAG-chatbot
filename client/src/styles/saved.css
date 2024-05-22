@@ -11,6 +11,11 @@
     margin-bottom: 15px;
 }
 
+.bubble-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .bubble {
     overflow: hidden;
     background-color: #5525e3;
@@ -25,6 +30,21 @@
 }
 
 .bubble.full-text {
-    max-height: 350px;
+    max-height: 800px;
     transform: max-height 0.8s ease;
+}
+
+.date {
+    font-size: 12px;
+    font-style: italic;
+    color: #333;
+}
+
+.data-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+    color: #333;
 }
