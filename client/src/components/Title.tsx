@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/title.css'
 
-
 const Title: React.FC = () => {
     const [title, setTitle] = useState<string>('Loading...');
 
@@ -13,7 +12,7 @@ const Title: React.FC = () => {
                     const data = await response.json();
                     setTitle(data.title);
                 } else {
-                    console.error('Error fetching title');
+                    console.error('Error fetching title: ', response.status);
                 }
             } catch (error) {
                 console.error('Error fetching title: ', error);
@@ -25,13 +24,13 @@ const Title: React.FC = () => {
 
   return (
     <>
-    <div className="image-container">
-        <img src="helpme.ai.png" alt="Picture" height="100" />
-    </div>
+        <div className="image-container">
+            <img src="helpme.ai.png" alt="Picture" height="100" />
+        </div>
 
-    <div className="title-container">
-        <h1 id="title">{title}</h1>
-    </div>
+        <div className="title-container">
+            <h1 id="title">{title}</h1>
+        </div>
     </>
   );
 };

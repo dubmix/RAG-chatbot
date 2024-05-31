@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/chat.css';
+import '../styles/chatbox.css';
 
 const Chat: React.FC = () => {
     const [messageInput, setMessageInput] = useState<string>('');
@@ -12,26 +12,30 @@ const Chat: React.FC = () => {
         displayUserChatBubble(messageInput);
         setMessageInput('');
 
-        try {
-            const response = await fetch('http://127.0.0.1:5000/api/process_request', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ request: messageInput })
-            });
-
+        fetch('http://127.0.0.1:5000/api/process_request', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ request: messageInput })
+        })
+        .then(response => {
+            console.log('messageInput', messageInput)
             if (response.ok) {
-                const responseData = await response.json();
-                const backendResponse = responseData.answer;
-                displayServerChatBubble(backendResponse)
+                console.log('response', response.json())
+                return response.json();
             } else {
                 throw new Error('Connection with backend server failed');
             }
-        } catch (error) {
+        })
+        .then(responseData => {
+            const backendResponse = responseData.answer;
+            displayServerChatBubble(backendResponse);
+        })
+        .catch(error => {
             console.error('Error sending message: ', error);
             displayServerChatBubble('Connection with backend server failed');
-        }
+        });
     };
 
     const displayServerChatBubble = (message: string) => {

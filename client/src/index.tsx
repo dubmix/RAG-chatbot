@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from './App.tsx';
+import { createRoot } from 'react-dom/client'; 
+import App from './App.tsx';
 import './styles/global.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Main/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
+
+root.render(<App />);

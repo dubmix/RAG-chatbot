@@ -16,16 +16,38 @@ from datetime import datetime
 
 from flask import Flask, jsonify, request
 from flask.logging import default_handler
+from pydantic import BaseModel
+
+from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
 GPT_MODEL = "gpt-3.5-turbo"
 GPT_API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
-app = Flask(__name__)
-app.logger.handlers = logger.handlers
+def create_app():
+    app = FastAPI()
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    @app.get("/api/title")
+    def title():
+        return JSONResponse(content={"title": "hilfy"})
+    
+    return app
+
+#app.logger.handlers = logger.handlers
 # wip, using 2>> to redirect stderr logs to flask.log
-app.logger.removeHandler(default_handler)
-app.logger.setLevel(logger.level)
-CORS(app)
+#app.logger.removeHandler(default_handler)
+#app.logger.setLevel(logger.level)
+#CORS(app)
 
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY") #type: ignore
@@ -43,7 +65,7 @@ collection = client.get_or_create_collection(name="asylumineurope", embedding_fu
 conversation = ConversationHistory()
 saved_msgs = SavedMessages()
 message_id = 0
-app.logger.info("Server ready")
+#app.logger.info("Server ready")
 
 
 def _stringify_headers(headers):
@@ -72,65 +94,68 @@ def _generate_llm_log(bubble_id: str, context: list | None, model: GPTResponse, 
     logger.info(f"Generated bubble {bubble_id}")
 
 
-@app.route("/api/title")
-def title():
-    return jsonify(title="helpme.ai")
+# @app.get("/api/title")
+# def title():
+#     return JSONResponse(content={"title": "hilfy"})
 
 
-@app.route("/api/saved_messages")
-def saved_messages():
-    return jsonify(saved_msgs.get_all_messages())
+# @app.get("/api/saved_messages")
+# def saved_messages():
+#     return saved_msgs.get_all_messages()
 
 
-@app.route("/api/save_message", methods=["POST"])
-def add_savedmessage():
-    global message_id
-    print('date', datetime.now().isoformat())
+# @app.post("/api/save_message", status_code=201)
+# def add_savedmessage(request: Request):
+#     global message_id
 
-    try:
-        data = request.json
-        for saved_message in saved_msgs.get_messages():
-            if saved_message.text == data["message"]: #type: ignore
-                return jsonify({"error": "Message already saved"}), 400
-        saved_msgs.add_message(SavedMessage(id=message_id, text=data["message"], date=datetime.now().isoformat())) #type: ignore
-        message_id += 1
-        return jsonify({"status": "Message saved"}), 201
-    except Exception as e:
-        return jsonify({"error": str(e)}), 400
+#     try:
+#         data = request.json()
+#         for saved_message in saved_msgs.get_messages():
+#             if saved_message.text == data["message"]: #type: ignore
+#                 raise HTTPException(status_code=400, detail="Message already saved")
+#         saved_msgs.add_message(SavedMessage(id=message_id, 
+#                                             text=data["message"], #type: ignore
+#                                             date=datetime.now().isoformat()))
+#         message_id += 1
+#         return {"status": "Message saved"}
+#     except Exception as e:
+#         return HTTPException(status_code=400, detail=str(e))
 
 
-@app.route("/api/process_request", methods=["POST"])
-def process_request():
-    bubble_id = (uuid.uuid4().hex)[:6]
-    logger.info(f"Processing request {bubble_id}")
-    _validate_request(bubble_id)
-    question = request.json.get("request")
+# @app.post("/api/process_request")
+# def process_request(request: Request):
+#     bubble_id = (uuid.uuid4().hex)[:6]
+#     logger.info(f"Processing request {bubble_id}")
+#     _validate_request(bubble_id)
+#     print('request: ', request.json)
+#     question = request.json.get("request")
+#     print('question: ', question)
 
-    query = collection.query(query_texts=[question], n_results=2, include=["documents"])
-    context = query["documents"]
+#     query = collection.query(query_texts=[question], n_results=2, include=["documents"])
+#     context = query["documents"]
 
-    prompt = PROMPT.format(context=context, question=question)
-    messages = []
-    if conversation.get_history() == []:
-        pass
-    else:
-        messages = conversation.to_dict()
-    messages.append({"role": "user", "content": prompt})
-    conversation.add_entry("user", question)
+#     prompt = PROMPT.format(context=context, question=question)
+#     messages = []
+#     if conversation.get_history() == []:
+#         pass
+#     else:
+#         messages = conversation.to_dict()
+#     messages.append({"role": "user", "content": prompt})
+#     conversation.add_entry("user", question)
 
-    data = {"model": GPT_MODEL, "messages": messages, "temperature": 0.7}
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
-    gpt_response = (requests.post(GPT_API_ENDPOINT, headers=headers, json=data)).json()
+#     data = {"model": GPT_MODEL, "messages": messages, "temperature": 0.7}
+#     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
+#     gpt_response = (requests.post(GPT_API_ENDPOINT, headers=headers, json=data)).json()
 
-    model = TypeAdapter(GPTResponse).validate_python(gpt_response)
-    answer = model.choices[0].message.content
-    conversation.add_entry("assistant", answer)
+#     model = TypeAdapter(GPTResponse).validate_python(gpt_response)
+#     answer = model.choices[0].message.content
+#     conversation.add_entry("assistant", answer)
 
-    _generate_llm_log(bubble_id, context, model, data, gpt_response)
-    return jsonify({"status": f"Generated bubble {bubble_id}", "answer": answer})
+#     _generate_llm_log(bubble_id, context, model, data, gpt_response)
+#     return JSONResponse(content={"status": f"Generated bubble {bubble_id}", "answer": answer})
 
 
 if __name__ == "__main__":
     # for docker build, use this line:
     # app.run(debug=True, host='0.0.0.0', port=5000)
-    app.run(debug=True, host="127.0.0.1")
+    uvicorn.run(create_app(), host="127.0.0.1", port=5000)

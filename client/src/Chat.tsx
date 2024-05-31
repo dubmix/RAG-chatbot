@@ -1,16 +1,16 @@
 import React from 'react';
 import Title from './components/Title.tsx';
 import Menu from './components/Menu.tsx';
-import Chat from './components/Chat.tsx';
+import ChatBox from './components/ChatBox.tsx';
 
-function Main() {
+function Chat() {
   return (
     <>
       <Menu />
       <Title />
-      <Chat />
+      <ChatBox />
     </>
   );
 }
 
-export default Main;
+export default Chat;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/saved.css';
+import '../styles/savedbox.css';
 import { DateTime } from 'luxon';
 
 const UPDATE_INTERVAL_SECONDS = 0.1;
@@ -39,7 +39,7 @@ const renderDate = (createdAt: string) => {
     return (<RelativeTimeText date={DateTime.fromISO(createdAt)} />)
 };
 
-const TableComponent: React.FC = () => {
+const SavedBox: React.FC = () => {
     const [data, setData] = useState<DataItem[]>([]);
 
     useEffect(() => {
@@ -67,7 +67,7 @@ const TableComponent: React.FC = () => {
     };
 
     return (
-        <div className='table-container'>
+        <div className='savedbox-container'>
             {data.length > 0 ? (
                 renderData(data, toggleFullText)
             ) : (
@@ -105,5 +105,5 @@ const renderData = (data: DataItem[], toggleFullText: (id: number) => void) => {
     return items;
 };
 
-export default TableComponent;
+export default SavedBox;
 
