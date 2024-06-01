@@ -48,7 +48,7 @@ const SavedBox: React.FC = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/saved_messages')
+            const response = await fetch('http://127.0.0.1:8080/api/saved_messages')
             const data: DataItem[] = await response.json();
             setData(data);
         } catch (error) {

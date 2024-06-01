@@ -12,7 +12,7 @@ const Chat: React.FC = () => {
         displayUserChatBubble(messageInput);
         setMessageInput('');
 
-        fetch('http://127.0.0.1:5000/api/process_request', {
+        fetch('http://127.0.0.1:8080/api/process_request', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -20,9 +20,7 @@ const Chat: React.FC = () => {
             body: JSON.stringify({ request: messageInput })
         })
         .then(response => {
-            console.log('messageInput', messageInput)
             if (response.ok) {
-                console.log('response', response.json())
                 return response.json();
             } else {
                 throw new Error('Connection with backend server failed');
@@ -52,7 +50,7 @@ const Chat: React.FC = () => {
 
     const handleDoubleClick = (message: string) => {
         
-        fetch('http://127.0.0.1:5000/api/save_message', {
+        fetch('http://127.0.0.1:8080/api/save_message', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
