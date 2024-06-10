@@ -1,8 +1,8 @@
-from pydantic import BaseModel
 from datetime import datetime
 
+from fastapi import HTTPException, Request
 from fastapi.routing import APIRouter
-from fastapi import Request, HTTPException
+from pydantic import BaseModel
 
 
 class SavedMessage(BaseModel):
@@ -12,7 +12,6 @@ class SavedMessage(BaseModel):
 
 
 class SavedMessages:
-
     def __init__(self):
         self.saved_messages = []
         self.message_id = 0
@@ -58,14 +57,18 @@ async def add_savedmessage(request: Request):
     try:
         data = await request.json()
         for saved_message in saved_msgs.get_messages():
-            if saved_message.text == data["message"]: #type: ignore
+            if saved_message.text == data["message"]:  # type: ignore
                 raise HTTPException(status_code=400, detail="Message already saved")
-        saved_msgs.add_message(SavedMessage(id=message_id, 
-                                            text=data["message"], #type: ignore
-                                            date=datetime.now().isoformat()))
+        saved_msgs.add_message(
+            SavedMessage(
+                id=message_id,
+                text=data["message"],  # type: ignore
+                date=datetime.now().isoformat(),
+            )
+        )
         saved_msgs.message_id += 1
-        print('mess id: ', saved_msgs.message_id)
-        print('saved: ', saved_msgs.get_all_messages())
+        print("mess id: ", saved_msgs.message_id)
+        print("saved: ", saved_msgs.get_all_messages())
         return {"status": "Message saved"}
     except Exception as e:
         return HTTPException(status_code=400, detail=str(e))

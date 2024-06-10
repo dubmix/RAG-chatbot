@@ -1,27 +1,23 @@
 import os
 import uuid
-import chromadb
+
 import requests
-from chromadb.utils import embedding_functions
 from dotenv import load_dotenv
+from fastapi import Request
+from fastapi.responses import JSONResponse
+from fastapi.routing import APIRouter
 from history import ConversationHistory
 from logger import logger
 from models import GPTResponse
 from prompts import PROMPT
 from pydantic import TypeAdapter
+from settings import GPT_API_ENDPOINT, GPT_MODEL
 
-from flask import Flask, jsonify, request
-from flask.logging import default_handler
-
-from fastapi import Request
-from fastapi.responses import JSONResponse
-from fastapi.routing import APIRouter
-
-GPT_MODEL = "gpt-3.5-turbo"
-GPT_API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
+import chromadb
+from chromadb.utils import embedding_functions
 
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY") #type: ignore
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")  # type: ignore
 
 router = APIRouter()
 
@@ -29,7 +25,7 @@ client = chromadb.HttpClient(host="localhost", port=8000)
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
     api_key=os.getenv("OPENAI_API_KEY"), model_name="text-embedding-3-small"
 )
-collection = client.get_or_create_collection(name="asylumineurope", embedding_function=openai_ef) #type: ignore
+collection = client.get_or_create_collection(name="asylumineurope", embedding_function=openai_ef)  # type: ignore
 conversation = ConversationHistory()
 
 
@@ -63,7 +59,7 @@ def _generate_llm_log(bubble_id: str, context: list | None, model: GPTResponse, 
 async def process_request(request: Request):
     bubble_id = (uuid.uuid4().hex)[:6]
     logger.info(f"Processing request {bubble_id}")
-    #_validate_request(bubble_id)
+    # _validate_request(bubble_id)
     data = await request.json()
     question = data["request"]
 
