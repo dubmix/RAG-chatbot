@@ -38,11 +38,14 @@ jobs:
     steps:
       - run: apt update --yes --no-install-recommends && apt install --yes git
       - checkout
-      - run: pip install pre-commit
-      - run: pre-commit install
+      - run: 
+          name: Install pre-commit
+          command: | 
+            pip install pre-commit
+            pre-commit install
       - poetry-install
       - run:
-          name: Run pre-commit checks
+          name: Run pre-commit
           command: pre-commit run --all-files
 
 # Orchestrate jobs using workflows
