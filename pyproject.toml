@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "masp"
-version = "0.1.0"
-description = "Not the Museu de Arte de São Paulo!"
+name = "rag-chatbot"
+version = "1.0"
+description = "Build a RAG app from scratch using Chroma and the ChatGPT API"
 authors = ["Pierre-Alexandre <beatsontapes@gmail.com>"]
 readme = "README.md"
 
