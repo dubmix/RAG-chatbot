@@ -21,7 +21,6 @@ def get_lifespan():
 
 def app():
     app = FastAPI(lifespan=get_lifespan())
-
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
