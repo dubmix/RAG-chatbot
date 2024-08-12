@@ -18,11 +18,11 @@ If you need ELK to monitor the logs, go to the root of the repo, and execute `do
 
 > Warning: this will only work if you have Docker and its plugins installed.
 
-Then, open a new terminal tab, navigate to each service, and execute the following commands in this order:
+Then, open a new terminal tab, and execute the following commands in this order:
 
 - Go to `./chromadb` and run `./launch.sh`
 
-> Starts the chroma server and redirects logs to the centralized logs folder.
+> Starts the chroma server in a Docker container and redirects logs to the centralized logs folder.
 
 - Go to `./api` and run `python main.py`
 
