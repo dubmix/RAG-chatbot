@@ -1,5 +1,4 @@
 # dependencies
-/src/masp/node_modules
 /.pnp
 .pnp.js
 .env
@@ -22,7 +21,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/src/masp/README.md
 
 # logs
 logs
