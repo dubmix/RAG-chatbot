@@ -12,6 +12,9 @@
 # production
 /build
 
+# certs
+Hilfy.pem
+
 # js files
 *.js
 
@@ -21,12 +24,10 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 # logs
 logs
-
-# build files
-/src/masp/build
 
 # byte-compiled / optimized / DLL files
 __pycache__/
