@@ -56,10 +56,6 @@ const App: React.FC = () => {
     }
   }, [isAuthenticated]);
 
-  // if (!isAuthenticated) {
-  //   return <Login onLogin={() => setIsAuthenticated(true)} />;
-  // }
-
   return (
     <div className="outer-container">
       <Router>

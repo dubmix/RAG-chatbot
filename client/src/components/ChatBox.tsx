@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import '../styles/chatbox.css';
 import '../styles/global.css';
 
+const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
+const apiBasePort = process.env.REACT_APP_PORT || '8080';
+
+
 const Chat: React.FC = () => {
     const [messageInput, setMessageInput] = useState<string>('');
     const [showSavedMessage, setShowSavedMessage] = useState<boolean>(false);
@@ -13,7 +17,7 @@ const Chat: React.FC = () => {
         displayUserChatBubble(messageInput);
         setMessageInput('');
 
-        fetch('http://127.0.0.1:8080/api/process_request', {
+        fetch('${apiBaseHost}:${apiBasePort}/api/process_request', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +55,7 @@ const Chat: React.FC = () => {
 
     const handleDoubleClick = (message: string) => {
         
-        fetch('http://127.0.0.1:8080/api/save_message', {
+        fetch('${apiBaseHost}:${apiBasePort}/api/save_message', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
