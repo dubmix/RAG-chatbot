@@ -8,8 +8,8 @@ repos:
       # Run the linter.
       - id: ruff
         types_or: [python, pyi, jupyter]
-        args: [--fix, --config=pyproject.toml]
+        args: [--fix, --config=api/pyproject.toml]
       # Run the formatter.
       - id: ruff-format
         types_or: [python, pyi, jupyter]
-        args: [--config=pyproject.toml]
+        args: [--config=api/pyproject.toml]
