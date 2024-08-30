@@ -1,0 +1,20 @@
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 220px);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.error-message {
+    position: absolute;
+    text-align: center;
+    margin-top: 75px;
+    font-size: 13px;
+}

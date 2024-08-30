@@ -1,10 +1,10 @@
 import React, { useState, useEffect }from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from './components/Login.tsx';
 import Chat from './Chat.tsx';
 import Saved from './Saved.tsx';
 import About from './About.tsx';
+import Login from './Login.tsx';
 import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
