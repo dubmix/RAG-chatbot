@@ -14,12 +14,17 @@ RUN mkdir /logs
 
 COPY launch.sh /app
 COPY *.py /app
+COPY .env /app
 
 WORKDIR /app
 RUN chmod +x launch.sh
 
 ENV HOST=0.0.0.0
-ENV PORT=5000
-EXPOSE 5000
+ENV CHROMA_HOST=chroma
+ENV PORT=5050
+ENV CHROMA_PORT=8000
+ENV APP_PASSWORD=password
+
+EXPOSE 5050
 
 CMD [ "./launch.sh" ]

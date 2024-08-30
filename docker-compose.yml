@@ -1,39 +1,45 @@
-version: '3'
-
 services:
-  # masp:
-  #   container_name: masp
-  #   build: ./src/masp
-  #   networks:
-  #     - network
-  #   volumes:
-  #     - logs:/logs
-  #   restart: always
+  chroma:
+    container_name: chroma
+    build: ./chromadb
+    networks:
+      - network
+    volumes:
+      - logs:/logs
+    restart: always
 
-  # nginx:
-  #   container_name: nginx
-  #   build: ./src/nginx
-  #   ports:
-  #     - "4443:4443"
-  #   volumes:
-  #     - ssl_data:/etc/nginx/ssl
-  #     - logs:/logs
-  #   networks:
-  #     - network
-  #   depends_on:
-  #     - masp
-  #   restart: always
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - "8080:8080"
+    volumes:
+      - ssl_data:/etc/nginx/ssl
+      - logs:/logs
+    networks:
+      - network
+    restart: always
 
-  # chroma:
-  #   container_name: chroma
-  #   build: ./src/chromadb
-  #   networks:
-  #     - network
-  #   volumes:
-  #     - logs:/logs
-  #   depends_on:
-  #     - masp
-  #   restart: always
+  api:
+    container_name: api
+    build: ./api
+    networks:
+      - network
+    volumes:
+      - logs:/logs
+    depends_on:
+      - chroma
+    restart: always
+
+  client:
+    container_name: client
+    build: ./client
+    networks:
+      - network
+    volumes:
+      - logs:/logs
+    restart: always
+
 
   # flask:
   #   container_name: flask
@@ -109,8 +115,7 @@ services:
 
 volumes:
   ssl_data:
-  # for docker build, enable logs volume
-  # logs:
+  logs:
     
 networks:
   network:

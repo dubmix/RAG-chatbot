@@ -8,11 +8,14 @@ import Login from './Login.tsx';
 import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
+const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
+const apiBasePort = process.env.REACT_APP_PORT || '8080';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('isAuthenticated') === 'true');
   const [timeoutId, setTimeoutId] = useState<number | null>(null);
 
+  console.log(apiBasePort)
   const handleLogin = () => {
     setIsAuthenticated(true);
     localStorage.setItem('isAuthenticated', 'true');
