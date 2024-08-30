@@ -10,7 +10,7 @@ const Title: React.FC = () => {
     useEffect(() => {
         const fetchTitle = async () => {
             try {
-                const response = await fetch('${apiBaseHost}:${apiBasePort}/api/title');
+                const response = await fetch(`${apiBaseHost}:${apiBasePort}/api/title`);
                 if (response.ok) {
                     const data = await response.json();
                     setTitle(data.title);

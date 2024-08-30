@@ -17,7 +17,7 @@ const Chat: React.FC = () => {
         displayUserChatBubble(messageInput);
         setMessageInput('');
 
-        fetch('${apiBaseHost}:${apiBasePort}/api/process_request', {
+        fetch(`${apiBaseHost}:${apiBasePort}/api/process_request`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const Chat: React.FC = () => {
 
     const handleDoubleClick = (message: string) => {
         
-        fetch('${apiBaseHost}:${apiBasePort}/api/save_message', {
+        fetch(`${apiBaseHost}:${apiBasePort}/api/save_message`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

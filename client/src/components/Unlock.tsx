@@ -11,7 +11,7 @@ function Unlock({ onLogin }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch ('${apiBaseHost}:${apiBasePort}/api/login', {
+        const response = await fetch (`${apiBaseHost}:${apiBasePort}/api/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ password })
