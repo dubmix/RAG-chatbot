@@ -1,7 +1,5 @@
 import datetime
 import logging
-import os
-
 
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
