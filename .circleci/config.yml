@@ -29,7 +29,7 @@ commands:
             poetry config --local virtualenvs.create true
             poetry config --local virtualenvs.in-project true
             poetry install --no-interaction --no-root
-          working_directory: RAG-chatbot
+          working_directory: api
 
 jobs:
   pre-commit:

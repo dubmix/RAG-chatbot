@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../styles/savedbox.css';
 import { DateTime } from 'luxon';
 
+const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
+const apiBasePort = process.env.REACT_APP_PORT || '8080';
+
 const UPDATE_INTERVAL_SECONDS = 0.1;
 
 interface DataItem {
@@ -48,7 +51,7 @@ const SavedBox: React.FC = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8080/api/saved_messages')
+            const response = await fetch('${apiBaseHost}:${apiBasePort}/api/saved_messages')
             const data: DataItem[] = await response.json();
             setData(data);
         } catch (error) {

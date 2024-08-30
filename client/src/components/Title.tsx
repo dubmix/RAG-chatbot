@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/title.css'
 
+const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
+const apiBasePort = process.env.REACT_APP_PORT || '8080';
+
 const Title: React.FC = () => {
     const [title, setTitle] = useState<string>('Loading...');
 
     useEffect(() => {
         const fetchTitle = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8080/api/title');
+                const response = await fetch('${apiBaseHost}:${apiBasePort}/api/title');
                 if (response.ok) {
                     const data = await response.json();
                     setTitle(data.title);
