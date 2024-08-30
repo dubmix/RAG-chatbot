@@ -18,8 +18,6 @@ function Login({ onLogin }) {
         } else {
             setError(result.message);
         }
-        console.log(result);
-        console.log(result.success);
         setPassword('');
     };
 
