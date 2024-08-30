@@ -3,6 +3,25 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#messageForm {
+  background-color: whitesmoke;
+  border: 1px solid lightslategray;
+  padding: 15px;
+  border-radius: 10px;
+  padding: 0 15px;
+  margin: 30px auto;
+  min-width: 100px;
+  max-width: 500px;
+  animation: 0.5s fadeIn forwards;
+}
+
+#messageInput {
+  border: none;
+  background-color: transparent;
+  flex: 1;
+  outline: none;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -4,6 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from login import router as login_router
 from process_request import router as process_request_router
 from saved_messages import SavedMessages
 from saved_messages import router as process_saved_messages
@@ -33,6 +34,7 @@ def app():
     def title():
         return JSONResponse(content={"title": "hilfy"})
 
+    app.include_router(login_router)
     app.include_router(process_request_router)
     app.include_router(process_saved_messages)
 
