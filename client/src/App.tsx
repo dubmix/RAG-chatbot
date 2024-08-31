@@ -8,6 +8,7 @@ import Login from './Login.tsx';
 import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
+const VALIDATION_INTERVAL = 5 * 1000;
 const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
 const apiBasePort = process.env.REACT_APP_PORT || '8080';
 
@@ -15,16 +16,30 @@ const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('isAuthenticated') === 'true');
   const [timeoutId, setTimeoutId] = useState<number | null>(null);
 
-  console.log(apiBasePort)
   const handleLogin = () => {
     setIsAuthenticated(true);
     localStorage.setItem('isAuthenticated', 'true');
     resetTimeout();
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        await fetch(`${apiBaseHost}:${apiBasePort}/api/logout`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+      } catch (error) {
+        console.error('Logout failed: ', error);
+      }
+    }
     setIsAuthenticated(false);
     localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('token');
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
@@ -40,6 +55,20 @@ const App: React.FC = () => {
     setTimeoutId(id);
   };
 
+  const validateSession = async () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const response = await fetch(`${apiBaseHost}:${apiBasePort}/api/protected?token=${token}`);
+        if (!response.ok) {
+          handleLogout();
+        }
+      } catch {
+        handleLogout();
+      }
+    }
+  };
+
   const handleUserActivity = () => {
     resetTimeout();
   };
@@ -47,6 +76,7 @@ const App: React.FC = () => {
   useEffect(() => {
     if (isAuthenticated) {
       resetTimeout();
+      const intervalId = setInterval(validateSession, VALIDATION_INTERVAL);
       window.addEventListener('mousemove', handleUserActivity);
       window.addEventListener('keydown', handleUserActivity);
       return () => {
@@ -55,6 +85,7 @@ const App: React.FC = () => {
         if (timeoutId) {
           clearTimeout(timeoutId);
         }
+        clearInterval(intervalId);
       }
     }
   }, [isAuthenticated]);

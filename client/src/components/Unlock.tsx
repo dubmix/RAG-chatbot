@@ -11,17 +11,22 @@ function Unlock({ onLogin }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch (`${apiBaseHost}:${apiBasePort}/api/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ password })
-        });
+        try {
+            const response = await fetch (`${apiBaseHost}:${apiBasePort}/api/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password })
+            });
 
-        const result = await response.json();
-        if (result.success) {
-            onLogin();
-        } else {
-            setError(result.message);
+            const result = await response.json();
+            if (result.success) {
+                localStorage.setItem('token', result.token);
+                onLogin();
+            } else {
+                setError(result.message);
+            }
+        } catch (error) {
+            setError("Login failed. Please try again.");
         }
         setPassword('');
     };

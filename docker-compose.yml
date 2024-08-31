@@ -8,6 +8,19 @@ services:
       - logs:/logs
     restart: always
 
+  api:
+    container_name: api
+    build: ./api
+    networks:
+      - network
+    volumes:
+      - logs:/logs
+    depends_on:
+      - chroma
+    ports:
+      - "5050:5050"
+    restart: always
+
   nginx:
     container_name: nginx
     build: ./nginx
@@ -18,17 +31,8 @@ services:
       - logs:/logs
     networks:
       - network
-    restart: always
-
-  api:
-    container_name: api
-    build: ./api
-    networks:
-      - network
-    volumes:
-      - logs:/logs
     depends_on:
-      - chroma
+      - api
     restart: always
 
   client:
@@ -38,6 +42,8 @@ services:
       - network
     volumes:
       - logs:/logs
+    ports:
+      - "3000:3000"
     restart: always
 
 

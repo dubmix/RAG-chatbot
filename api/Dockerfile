@@ -20,11 +20,11 @@ WORKDIR /app
 RUN chmod +x launch.sh
 
 ENV HOST=0.0.0.0
-ENV CHROMA_HOST=chroma
 ENV PORT=5050
+ENV CHROMA_HOST=chroma
 ENV CHROMA_PORT=8000
-ENV APP_PASSWORD=password
+ENV APP_PASSWORD=CodingCivic
 
 EXPOSE 5050
 
-CMD [ "./launch.sh" ]
+CMD [ "poetry", "run", "python", "main.py" ]

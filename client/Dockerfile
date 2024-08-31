@@ -16,8 +16,8 @@ RUN npm install -g serve
 
 RUN npm run build
 
-ENV REACT_APP_API_BASE_URL=http://0.0.0.0
-ENV REACT_APP_PORT=5050
+ENV REACT_APP_API_BASE_URL=http://nginx
+ENV REACT_APP_PORT=8080
 EXPOSE 3000
 
 CMD [ "serve", "-s", "build" ]
