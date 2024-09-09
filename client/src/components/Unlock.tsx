@@ -9,6 +9,8 @@ function Unlock({ onLogin }) {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    console.log(`${apiBaseHost}:${apiBasePort}`)
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
