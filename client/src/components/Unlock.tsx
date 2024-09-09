@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
 import '../styles/global.css';
+import { apiBaseHost, apiBasePort } from '../App.tsx';
 
-const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
-const apiBasePort = process.env.REACT_APP_PORT || '8080';
 
 function Unlock({ onLogin }) {
     const [password, setPassword] = useState('');

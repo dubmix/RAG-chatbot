@@ -9,8 +9,8 @@ import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
 const VALIDATION_INTERVAL = 5 * 1000;
-const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
-const apiBasePort = process.env.REACT_APP_PORT || '8080';
+export const apiBaseHost = process.env.REACT_APP_BASE_URL || 'http://0.0.0.0';
+export const apiBasePort = process.env.REACT_APP_BASE_PORT || '8080';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('isAuthenticated') === 'true');
@@ -57,6 +57,7 @@ const App: React.FC = () => {
 
   const validateSession = async () => {
     const token = localStorage.getItem('token');
+    console.log(`${apiBaseHost}:${apiBasePort}`)
     if (token) {
       try {
         const response = await fetch(`${apiBaseHost}:${apiBasePort}/api/protected?token=${token}`);

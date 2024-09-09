@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/chatbox.css';
 import '../styles/global.css';
-
-const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
-const apiBasePort = process.env.REACT_APP_PORT || '8080';
+import { apiBaseHost, apiBasePort } from '../App.tsx';
 
 
 const Chat: React.FC = () => {

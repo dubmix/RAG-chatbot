@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/title.css'
+import { apiBaseHost, apiBasePort } from '../App.tsx';
 
-const apiBaseHost = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1';
-const apiBasePort = process.env.REACT_APP_PORT || '8080';
 
 const Title: React.FC = () => {
     const [title, setTitle] = useState<string>('Loading...');

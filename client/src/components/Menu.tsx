@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/menu.css';
 
+
 const Menu = () => {
     const [menuOpen, setMenuOpen] = React.useState(true);
 
