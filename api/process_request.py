@@ -16,15 +16,11 @@ import chromadb
 from chromadb.utils import embedding_functions
 
 settings = Settings()
-os.environ["OPENAI_API_KEY"] = settings.OPENAI_API_KEY
-chroma_host = settings.CHROMA_HOST
-chroma_port = settings.CHROMA_PORT
-
 router = APIRouter()
 
-client = chromadb.HttpClient(host=chroma_host, port=chroma_port)
+client = chromadb.HttpClient(host=settings.CHROMA_HOST, port=settings.CHROMA_PORT)
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-    api_key=os.getenv("OPENAI_API_KEY"), model_name="text-embedding-3-small"
+    api_key=settings.OPENAI_API_KEY, model_name="text-embedding-3-small"
 )
 collection = client.get_or_create_collection(name="asylumineurope", embedding_function=openai_ef)  # type: ignore
 conversation = ConversationHistory()
@@ -60,7 +56,7 @@ async def process_request(request: Request):
     conversation.add_entry("user", question)
 
     data = {"model": settings.GPT_MODEL, "messages": messages, "temperature": 0.7}
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {settings.OPENAI_API_KEY}"}
     gpt_response = (requests.post(settings.GPT_API_ENDPOINT, headers=headers, json=data)).json()
 
     model = TypeAdapter(GPTResponse).validate_python(gpt_response)
