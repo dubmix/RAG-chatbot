@@ -1,24 +1,19 @@
-import os
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import Dict
 
-from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, Request
 from fastapi.routing import APIRouter
-
-load_dotenv()
-PASSWORD = os.getenv("APP_PASSWORD")
+from settings import Settings
 
 router = APIRouter()
-
 sessions: Dict[str, Dict] = {}
-SESSION_TIMEOUT = timedelta(seconds=30)
 
 
 def get_session(token: str):
+    settings = Settings()
     session = sessions.get(token)
-    if not session or datetime.now() - session["last_activity"] > SESSION_TIMEOUT:
+    if not session or datetime.now() - session["last_activity"] > settings.SESSION_TIMEOUT:
         sessions.pop(token, None)
         raise HTTPException(status_code=401, detail="Session expired or invalid")
     session["last_activity"] = datetime.now()
@@ -27,13 +22,14 @@ def get_session(token: str):
 
 @router.post("/api/login")
 async def login(request: Request):
+    settings = Settings()
     data = await request.json()
-    if data["password"] == PASSWORD:
+    if data["password"] == settings.APP_PASSWORD:
         existing_token = next(
             (
                 token
                 for token, session in sessions.items()
-                if session["last_activity"] > datetime.now() - SESSION_TIMEOUT
+                if session["last_activity"] > datetime.now() - settings.SESSION_TIMEOUT
             ),
             None,
         )

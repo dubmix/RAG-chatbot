@@ -1,4 +1,3 @@
-import os
 from contextlib import asynccontextmanager
 
 import uvicorn
@@ -9,6 +8,7 @@ from login import router as login_router
 from process_request import router as process_request_router
 from saved_messages import SavedMessages
 from saved_messages import router as process_saved_messages
+from settings import Settings
 
 
 def get_lifespan():
@@ -42,18 +42,8 @@ def app():
     return app
 
 
-# app.logger.handlers = logger.handlers
-# wip, using 2>> to redirect stderr logs to flask.log
-# app.logger.removeHandler(default_handler)
-# app.logger.setLevel(logger.level)
-
-# for docker build, use this line:
-# client = chromadb.HttpClient(host="chroma", port=8000)
-
-# app.logger.info("Server ready")
-
-
 if __name__ == "__main__":
-    host = os.getenv("HOST", "127.0.0.1")
-    port = int(os.getenv("PORT", 8080))
+    settings = Settings()
+    host = settings.UVICORN_HOST
+    port = settings.UVICORN_PORT
     uvicorn.run("main:app", host=host, port=port, reload=True)
