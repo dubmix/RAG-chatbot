@@ -9,8 +9,8 @@ import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
 const VALIDATION_INTERVAL = 5 * 1000;
-export const apiBaseHost = process.env.REACT_APP_BASE_URL || 'http://0.0.0.0';
-export const apiBasePort = process.env.REACT_APP_BASE_PORT || '8080';
+export const apiBaseHost = process.env.REACT_APP_BASE_URL || 'http://51.20.117.147';
+export const apiBasePort = process.env.REACT_APP_BASE_PORT || '5050';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('isAuthenticated') === 'true');

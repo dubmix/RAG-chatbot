@@ -29,6 +29,9 @@ Hilfy.pem
 # logs
 logs
 
+# local certs
+certs
+
 # byte-compiled / optimized / DLL files
 __pycache__/
 .pytest_cache/

@@ -6,6 +6,8 @@ services:
       - network
     volumes:
       - logs:/logs
+    ports:
+      - "8000:8000"
     restart: always
 
   api:
@@ -24,15 +26,15 @@ services:
   nginx:
     container_name: nginx
     build: ./nginx
-    ports:
-      - "8080:8080"
-    volumes:
-      - ssl_data:/etc/nginx/ssl
-      - logs:/logs
     networks:
       - network
+    volumes:
+      - logs:/logs
+      - /etc/letsencrypt/archive/hilfy.co:/etc/nginx/ssl
     depends_on:
       - api
+    ports:
+      - "443:443"
     restart: always
 
   client:
@@ -47,7 +49,6 @@ services:
     restart: always
 
 volumes:
-  ssl_data:
   logs:
     
 networks:
