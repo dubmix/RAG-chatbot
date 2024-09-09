@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/savedbox.css';
 import { DateTime } from 'luxon';
-import { apiBaseHost, apiBasePort } from '../App.tsx';
+import { baseUrl } from '../App.tsx';
 
 
 const UPDATE_INTERVAL_SECONDS = 0.1;
@@ -50,7 +50,7 @@ const SavedBox: React.FC = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`${apiBaseHost}:${apiBasePort}/api/saved_messages`)
+            const response = await fetch(`${baseUrl}/api/saved_messages`)
             const data: DataItem[] = await response.json();
             setData(data);
         } catch (error) {

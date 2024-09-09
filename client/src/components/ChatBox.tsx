@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/chatbox.css';
 import '../styles/global.css';
-import { apiBaseHost, apiBasePort } from '../App.tsx';
+import { baseUrl } from '../App.tsx';
 
 
 const Chat: React.FC = () => {
@@ -15,7 +15,7 @@ const Chat: React.FC = () => {
         displayUserChatBubble(messageInput);
         setMessageInput('');
 
-        fetch(`${apiBaseHost}:${apiBasePort}/api/process_request`, {
+        fetch(`${baseUrl}/api/process_request`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const Chat: React.FC = () => {
 
     const handleDoubleClick = (message: string) => {
         
-        fetch(`${apiBaseHost}:${apiBasePort}/api/save_message`, {
+        fetch(`${baseUrl}/api/save_message`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

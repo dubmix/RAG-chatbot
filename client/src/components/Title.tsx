@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/title.css'
-import { apiBaseHost, apiBasePort } from '../App.tsx';
+import { baseUrl } from '../App.tsx';
 
 
 const Title: React.FC = () => {
@@ -9,7 +9,7 @@ const Title: React.FC = () => {
     useEffect(() => {
         const fetchTitle = async () => {
             try {
-                const response = await fetch(`${apiBaseHost}:${apiBasePort}/api/title`);
+                const response = await fetch(`${baseUrl}/api/title`);
                 if (response.ok) {
                     const data = await response.json();
                     setTitle(data.title);

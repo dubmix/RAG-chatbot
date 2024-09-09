@@ -9,8 +9,9 @@ import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
 const VALIDATION_INTERVAL = 5 * 1000;
-export const apiBaseHost = process.env.REACT_APP_BASE_URL || 'https://51.20.117.147';
-export const apiBasePort = process.env.REACT_APP_BASE_PORT || '5050';
+const apiBaseHost = process.env.REACT_APP_BASE_URL || 'https://hilfy.co';
+const apiBasePort = process.env.REACT_APP_BASE_PORT || '';
+export const baseUrl = `${apiBaseHost}${apiBasePort}`;
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('isAuthenticated') === 'true');
@@ -26,7 +27,7 @@ const App: React.FC = () => {
     const token = localStorage.getItem('token');
     if (token) {
       try {
-        await fetch(`${apiBaseHost}:${apiBasePort}/api/logout`, {
+        await fetch(`${baseUrl}/api/logout`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -57,10 +58,9 @@ const App: React.FC = () => {
 
   const validateSession = async () => {
     const token = localStorage.getItem('token');
-    console.log(`${apiBaseHost}:${apiBasePort}`)
     if (token) {
       try {
-        const response = await fetch(`${apiBaseHost}:${apiBasePort}/api/protected?token=${token}`);
+        const response = await fetch(`${baseUrl}/api/protected?token=${token}`);
         if (!response.ok) {
           handleLogout();
         }

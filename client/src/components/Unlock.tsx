@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
 import '../styles/global.css';
-import { apiBaseHost, apiBasePort } from '../App.tsx';
+import { baseUrl } from '../App.tsx';
 
 
 function Unlock({ onLogin }) {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    console.log(`${apiBaseHost}:${apiBasePort}`)
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch (`${apiBaseHost}:${apiBasePort}/api/login`, {
+            const response = await fetch (`${baseUrl}/api/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ password })
