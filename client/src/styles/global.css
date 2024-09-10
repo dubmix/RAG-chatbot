@@ -3,6 +3,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#fade {
+    animation: 0.5s fadeIn forwards;
+}
+
 #messageForm {
   background-color: whitesmoke;
   border: 1px solid lightslategray;

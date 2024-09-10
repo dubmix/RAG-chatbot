@@ -18,3 +18,12 @@
     margin-top: 75px;
     font-size: 13px;
 }
+
+.home-button {
+    position: relative;
+    top: 4px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    justify-content: center;
+}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect }from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Chat from './Chat.tsx';
 import Saved from './Saved.tsx';
 import About from './About.tsx';
 import Login from './Login.tsx';
+import Home from './Home.tsx';
 import './styles/app.css';
 
 const TIMEOUT = 30 * 1000;
@@ -92,21 +93,31 @@ const App: React.FC = () => {
   }, [isAuthenticated]);
 
   return (
+    <Router>
+      <AppContent isAuthenticated={isAuthenticated} handleLogin={handleLogin} />
+    </Router>
+  );
+};
+
+const AppContent = ({ isAuthenticated, handleLogin }) => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  return (
     <div className="outer-container">
-      <Router>
-        <Routes>
-          {!isAuthenticated ? (
-            <Route path="*" element={<Login onLogin={handleLogin} />} />
-          ) : (
-            <>
-              <Route path='/' element={<Navigate to='/chat' replace />} />
-              <Route path='/chat' element={<Chat />} />
-              <Route path='/saved' element={<Saved />} />
-              <Route path='/about' element={<About />} />
-            </>
-          )}
-        </Routes>
-      </Router>
+        <div className={!isAuthenticated && !isHome ? 'blurred-background' : ''}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path='/chat' element={<Chat />} />
+            <Route path='/saved' element={<Saved />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+        </div>
+        {!isAuthenticated && !isHome && (
+          <div className="login-overlay">
+            <Login onLogin={handleLogin} />
+          </div>
+        )}
     </div>
   );
 };
