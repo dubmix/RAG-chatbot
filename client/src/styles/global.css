@@ -1,14 +1,31 @@
 body {
-    background-color: whitesmoke;
+    background-color: #bf9797;
     font-family: 'Rubik', sans-serif;
     font-weight: 300;
+    overflow-x: hidden;
+    min-height: 20vh;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     color: #000000;
     font-weight: 500;
 }
+
+h2 {
+    font-size: 1rem;
+    color: #ee0909;
+    font-weight: 500;
+    transform: scaleY(0.95);
+    letter-spacing: 0.07rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 300;
+    line-height: 1.5;
+} 
 
 #fade {
     animation: 0.5s fadeIn forwards;

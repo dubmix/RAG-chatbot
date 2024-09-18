@@ -16,7 +16,7 @@ const Menu = () => {
         </button>
         <div id="menu" className={`menu ${!menuOpen ? 'open' : ''}`}>
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="chat">Chat</a></li>
                 <li><a href="saved">Saved</a></li>
                 <li><a href="about">About</a></li>
