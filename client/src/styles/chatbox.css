@@ -27,7 +27,7 @@
 .help-bubbles {
     height: 60px;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', sans-serif;
     color: rgb(101, 101, 101);
     font-size: 15px;
 }
