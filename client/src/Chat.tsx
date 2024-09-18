@@ -8,7 +8,7 @@ function Chat() {
     <>
       <Menu />
       <Title />
-      <ChatBox />
+      {/* <ChatBox /> */}
     </>
   );
 }

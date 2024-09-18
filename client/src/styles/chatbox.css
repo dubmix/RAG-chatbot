@@ -74,7 +74,7 @@
     user-select: none;
 }
 
-button[type="submit"] {
+.submit-button {
     border: 1px solid lightslategray;
     background-color: whitesmoke;
     color: black;

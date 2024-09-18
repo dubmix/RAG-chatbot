@@ -27,20 +27,38 @@ p {
     line-height: 1.5;
 } 
 
+button[type="submit"] {
+    font-style: 'Rubik', sans-serif;
+}
+
 #fade {
     animation: 0.5s fadeIn forwards;
 }
 
 #messageForm {
-  background-color: whitesmoke;
-  border: 1px solid lightslategray;
-  padding: 15px;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 20px;
   padding: 0 15px;
   margin: 30px auto;
   min-width: 100px;
   max-width: 500px;
+  height: 40px;
   animation: 0.5s fadeIn forwards;
+}
+
+#messageFormBis {
+  display: flex;
+  align-items: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 20px;
+  padding: 0 15px;
+  margin: 30px auto;
+  min-width: 100px;
+  max-width: 500px;
+  height: 40px;
+  /* animation: 0.5s fadeIn forwards; */
 }
 
 #messageInput {
@@ -48,6 +66,8 @@ p {
   background-color: transparent;
   flex: 1;
   outline: none;
+  font-size: 1rem;
+  color: black;
 }
 
 @keyframes fadeIn {
@@ -89,5 +109,15 @@ p {
       opacity: 0; /* Fade out */
       transform: translate(-50%, -50%) scale(0);
     }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+  }
+  
+  .shake {
+    animation: shake 0.3s ease;
   }
   

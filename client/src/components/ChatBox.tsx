@@ -109,7 +109,7 @@ const Chat: React.FC = () => {
                     value={messageInput}
                     autoComplete='off'
                     onChange={(e) => setMessageInput(e.target.value)} />
-                <button type="submit">Send</button>
+                <button className="submit-button" type="submit">Send</button>
             </div>
         </form>
         </>
