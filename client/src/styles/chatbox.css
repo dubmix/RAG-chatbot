@@ -1,8 +1,10 @@
 #chat-container {
-    background-color: #298f64;
+    background-color: #86dab7;
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
     min-width: 200px;
     min-height: 100px;
@@ -14,6 +16,10 @@
     border-top: 1px solid lightgrey;
     border-image: linear-gradient(to right, transparent, lightgrey 10%, lightgrey 50%, lightgrey 90%, transparent) 1;
     animation: 0.5s fadeIn forwards;
+}
+
+.justify-active {
+    justify-content: flex-start;
 }
 
 .input-container {
@@ -32,18 +38,23 @@
     height: 60px;
     display: flex;
     font-family: 'Rubik', sans-serif;
-    color: rgb(101, 101, 101);
+    color: rgb(195, 34, 34);
     font-size: 15px;
 }
 
 .help-bubble {
     flex: 1;
-    border: 1px dashed lightslategray;
+    border: 1px dashed rgb(18, 121, 223);
     margin: 0 3px;
     display: flex;
     padding: 15px;
+    justify-content: center;
     align-items: center;
     border-radius: 10px;
+}
+
+#chat-container.justify-active {
+    justify-content: center;
 }
 
 .hide {

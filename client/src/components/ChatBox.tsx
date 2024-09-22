@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/chatbox.css';
 import '../styles/login.css';
 import '../styles/global.css';
@@ -9,12 +9,23 @@ const Chat: React.FC = () => {
     const [messageInput, setMessageInput] = useState<string>('');
     const [showSavedMessage, setShowSavedMessage] = useState<boolean>(false);
     const [showHelpBubbles, setShowHelpBubbles] = useState<boolean>(true);
+    const [justifyActive, setJustifyActive] = useState<boolean>(false);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        setJustifyActive(true);
         event.preventDefault();
         if (!messageInput.trim()) return;
         displayUserChatBubble(messageInput);
         setMessageInput('');
+
+
+        if (chatContainerRef.current) {
+            chatContainerRef.current.style.justifyContent = 'flex-start'; // Or any desired value
+        }
+        // setTimeout(() => {
+        //     setShowHelpBubbles(false);
+        // }, 100);
 
         fetch(`${baseUrl}/api/process_request`, {
             method: 'POST',
@@ -51,6 +62,20 @@ const Chat: React.FC = () => {
         const chatBubbleElement = createChatBubble(message, 'user-bubble');
         chatMessagesElement.insertBefore(chatBubbleElement, chatMessagesElement.firstChild);
     }
+
+    const handleFocus = () => {
+        setShowHelpBubbles(false);
+        // const chatContainer = document.getElementById('chat-container');
+        //     if (chatContainer) {
+        //         chatContainer.classList.add('transition-help'); // Assuming this triggers your animation
+        //     }
+        // setTimeout(() => {
+        //     setShowHelpBubbles(false);
+        //     if (chatContainer) {
+        //         chatContainer.classList.remove('transition-help'); // Assuming this triggers your animation
+        //     }
+        // }, 500);
+    };
 
     const handleDoubleClick = (message: string) => {
         
@@ -108,16 +133,17 @@ const Chat: React.FC = () => {
     return (
         <>
         <div className="chat-wrapper">
-            <div id="chat-container">
-                <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
-                        <div className="help-bubble">What are my rights as a refugee?</div>
-                        <div className="help-bubble">How do I apply for asylum in Germany?</div>
-                </div>
+            <div id="chat-container"
+                ref={chatContainerRef}>
+                    <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
+                            <div className="help-bubble">What are my rights as a refugee?</div>
+                            <div className="help-bubble">How do I apply for asylum in Germany?</div>
+                    </div>
             </div>
 
             {showSavedMessage && <div className="saved-message">Message saved!</div>}
 
-            <form id="messageForm-2" onSubmit={handleSubmit} onFocus={() => setShowHelpBubbles(false)}>
+            <form id="messageForm-2" onSubmit={handleSubmit} onFocus={handleFocus}>
                 {/* <div className="input-container"> */}
                     <input type="text" 
                         id="messageInput" 
