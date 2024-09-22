@@ -1,5 +1,5 @@
 #chat-container {
-    background-color: #e7e3ed;
+    background-color: #298f64;
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
@@ -7,7 +7,9 @@
     min-width: 200px;
     min-height: 100px;
     max-width: 700px;
-    height: calc(100vh - 316px);
+    width: calc(100vw - 140px);
+    margin-top: 70px;
+    height: calc(100vh - 172px);
     z-index: 0;
     border-top: 1px solid lightgrey;
     border-image: linear-gradient(to right, transparent, lightgrey 10%, lightgrey 50%, lightgrey 90%, transparent) 1;
@@ -16,6 +18,8 @@
 
 .input-container {
     display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #chat-messages {
@@ -50,10 +54,11 @@
 .chat-bubble {
     background-color: #5525e3;
     color: whitesmoke;
-    max-width: 55%;
+    max-width: 50%;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
+    margin-left: 30px;
     animation: fadeInUp 0.5s ease forwards;
     align-self: flex-start;
     user-select: none;
@@ -70,8 +75,10 @@
 
 .user-bubble {
     align-self: flex-end;
-    background-color: #6e46e5;
+    background-color: #ececec;
+    color: black;
     user-select: none;
+
 }
 
 .submit-button {
@@ -96,3 +103,24 @@
     opacity: 0;
     animation: fadeInOut 2s ease-in-out;
   }
+
+.chat-logo {
+    position: fixed;
+    transform: translateX(-34px);
+  }
+
+.chat-bubble span {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.chat-wrapper {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    
+}
+
+.menu.open ~ .chat-wrapper {
+    margin-left: 130px;
+}
+

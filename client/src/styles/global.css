@@ -48,6 +48,20 @@ button[type="submit"] {
   animation: 0.5s fadeIn forwards;
 }
 
+#messageForm-2 {
+  display: flex;
+  align-items: center;
+  background-color: rgb(163, 58, 58);
+  border-radius: 20px;
+  margin: 30px auto;
+  min-width: 100px;
+  max-width: 670px;
+  padding: 0 15px;
+  height: 40px;
+  animation: 0.5s fadeIn forwards;
+  width: calc(100vw - 170px);
+}
+
 #messageFormBis {
   display: flex;
   align-items: center;

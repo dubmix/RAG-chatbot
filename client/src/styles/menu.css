@@ -1,7 +1,7 @@
 .menu-button {
     position: absolute;
-    /* top: 25px; */
-    /* left: 25px; */
+    top: 25px;
+    left: 25px;
     background-color: transparent;
     border: none;
     transition: transform 0.3s ease;
@@ -16,8 +16,8 @@
     background-color: whitesmoke;
     border-right: 1px solid lightgrey;
     border-image: linear-gradient(to top, transparent, lightgrey 10%, lightgrey 50%, lightgrey 90%, transparent) 1;
-    left: -152px;
-    width: 150px;
+    left: -137px;
+    width: 135px;
     transition: left 0.3s ease;
     top: 0;
     bottom: 0;
