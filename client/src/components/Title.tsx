@@ -26,13 +26,18 @@ const Title: React.FC = () => {
 
   return (
     <>
+    <div className="title">
         <div className="image-container">
-            <img src="helpme.ai.png" alt="Picture" height="100" />
+            <img src="hilfy.png" alt="Picture" height="170" />
         </div>
 
         <div className="title-container">
             <h1 id="title">{title}</h1>
         </div>
+        <div className="header">
+            <h1>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>   
+        </div>
+    </div>
     </>
   );
 };

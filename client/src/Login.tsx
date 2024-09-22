@@ -10,7 +10,7 @@ function Unlock({ onLogin }) {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             const response = await fetch (`${baseUrl}/api/login`, {
@@ -20,11 +20,19 @@ function Unlock({ onLogin }) {
             });
 
             const result = await response.json();
+            const form = document.getElementById('messageFormBis') as HTMLFormElement | null;
+
             if (result.success) {
                 localStorage.setItem('token', result.token);
                 onLogin();
             } else {
-                setError(result.message);
+                if (form) {
+                    form.classList.add('shake');
+                    console.log(form);
+                    setTimeout(() => {
+                        form.classList.remove('shake');
+                    }, 500);
+                }
             }
         } catch (error) {
             setError("Login failed. Please try again.");
@@ -35,7 +43,7 @@ function Unlock({ onLogin }) {
     return (
         <div className="login-wrapper">
             <div className="login-container">
-                <form id="messageForm" onSubmit={handleSubmit}>
+                <form id="messageFormBis" onSubmit={handleSubmit}>
                     <input 
                         id="messageInput"
                         type="password" 
@@ -43,9 +51,10 @@ function Unlock({ onLogin }) {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Enter password"
                     />
-                    <button type="submit">Unlock App</button>
+                    <button className="unlock-button" type="submit">
+                        <img src="unlock.png" alt="Unlock" />
+                    </button>
                 </form>
-                {error && <p className="error-message">{error}</p>}
                 <button id="fade" className="home-button" onClick={() => navigate('/')}>
                   <img src="arrow_left.png" alt="Home" height="20" />
                 </button>
