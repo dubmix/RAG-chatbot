@@ -127,7 +127,7 @@ const Chat: React.FC = () => {
                         placeholder="Ask me anything..."
                     />
                     <button className="unlock-button" type="submit">
-                        <img src="unlock.png" alt="Unlock" />
+                        <img src="arrow_up.png" alt="Unlock" />
                     </button>
                 {/* </div> */}
             </form>

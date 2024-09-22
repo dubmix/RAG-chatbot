@@ -16,8 +16,8 @@
     background-color: whitesmoke;
     border-right: 1px solid lightgrey;
     border-image: linear-gradient(to top, transparent, lightgrey 10%, lightgrey 50%, lightgrey 90%, transparent) 1;
-    left: -137px;
-    width: 135px;
+    left: -152px;
+    width: 130px;
     transition: left 0.3s ease;
     top: 0;
     bottom: 0;
@@ -40,10 +40,11 @@
     background-color: #e7e3ed;
     border: 1px solid #e7e3ed;
     border-radius: 4px;
-    padding: 18px;
+    padding: 16px;
     cursor: cursor;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 21px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
     color: #333;
     margin-bottom: 10px;
 }
@@ -52,6 +53,13 @@
     text-decoration: none;
     color: #333;
     margin-left: 10px;
+}
+
+.menu ul li img {
+    width: 17x;
+    height: 17px;
+    margin-top: 2px;
+    margin-left: -5px;
 }
 
 .toggle-button {
