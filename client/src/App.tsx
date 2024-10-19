@@ -8,7 +8,7 @@ import Login from './Login.tsx';
 import Home from './Home.tsx';
 import './styles/app.css';
 
-const TIMEOUT = 60000 * 1000;
+const TIMEOUT = 30000 * 1000;
 const VALIDATION_INTERVAL = 5 * 1000;
 // @ts-ignore
 const apiBaseHost = process.env.REACT_APP_BASE_URL || 'https://hilfy.co';
@@ -107,21 +107,20 @@ const AppContent = ({ isAuthenticated, handleLogin }) => {
 
   return (
     <div>
-      {/* <div className={!isAuthenticated && !isHome ? 'blurred-background' : ''}> */}
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/chat' element={<Chat />} />
-          <Route path='/saved' element={<Saved />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
-      </div>
-      {/* {!isAuthenticated && !isHome && (
-        <div className="login-overlay">
-          <Login onLogin={handleLogin} />
+      <div className={!isAuthenticated && !isHome ? 'blurred-background' : ''}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path='/chat' element={<Chat />} />
+            <Route path='/saved' element={<Saved />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
         </div>
-      )} */}
-    </div>
+        {!isAuthenticated && !isHome && (
+          <div className="login-overlay">
+            <Login onLogin={handleLogin} />
+          </div>
+        )}
+      </div>
   );
 };
 

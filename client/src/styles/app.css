@@ -5,7 +5,7 @@
 } */
 
 .blurred-background {
-    filter: blur(5px);
+    filter: blur(8px);
     transition: filter 0.5s ease;
 }
 

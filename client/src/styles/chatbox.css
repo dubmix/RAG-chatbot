@@ -1,5 +1,5 @@
 #chat-container {
-    background-color: #86dab7;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
@@ -7,7 +7,7 @@
     justify-content: center;
     margin: 0 auto;
     min-width: 200px;
-    min-height: 100px;
+    min-height: 280px;
     max-width: 700px;
     width: calc(100vw - 140px);
     margin-top: 70px;
@@ -35,22 +35,23 @@
 }
 
 .help-bubbles {
-    height: 60px;
+    height: 70px;
     display: flex;
     font-family: 'Rubik', sans-serif;
-    color: rgb(195, 34, 34);
+    color: #242424;
     font-size: 15px;
 }
 
 .help-bubble {
     flex: 1;
-    border: 1px dashed rgb(18, 121, 223);
+    border: 1px dashed #242424;
     margin: 0 3px;
     display: flex;
-    padding: 15px;
+    padding: 20px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 #chat-container.justify-active {
@@ -135,3 +136,6 @@
     margin-left: 128px;
 }
 
+.image-help {
+    margin-bottom: 45px;
+}

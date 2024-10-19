@@ -135,16 +135,22 @@ const Chat: React.FC = () => {
         <div className="chat-wrapper">
             <div id="chat-container"
                 ref={chatContainerRef}>
-                    <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
-                            <div className="help-bubble">What are my rights as a refugee?</div>
-                            <div className="help-bubble">How do I apply for asylum in Germany?</div>
-                    </div>
+                <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
+                    <div className="help-bubble">What are my rights as a refugee?</div>
+                    <div className="help-bubble">How do I apply for asylum in Germany?</div>
+                </div>
+                <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
+                    <div className="help-bubble">What are my rights as a refugee?</div>
+                    <div className="help-bubble">How do I apply for asylum in Germany?</div>
+                </div>
+                <div className={`help-bubbles image-help ${showHelpBubbles ? '' : 'hide'}`}>
+                    <img src="hilfy.png" alt="Picture" height="100" />
+                </div>
             </div>
 
             {showSavedMessage && <div className="saved-message">Message saved!</div>}
 
             <form id="messageForm-2" onSubmit={handleSubmit} onFocus={handleFocus}>
-                {/* <div className="input-container"> */}
                     <input type="text" 
                         id="messageInput" 
                         value={messageInput}
@@ -155,7 +161,6 @@ const Chat: React.FC = () => {
                     <button className="unlock-button" type="submit">
                         <img src="arrow_up.png" alt="Unlock" />
                     </button>
-                {/* </div> */}
             </form>
         </div>
         </>

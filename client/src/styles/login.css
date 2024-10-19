@@ -1,15 +1,9 @@
-/* .login-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 220px);
-} */
-
 .login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(-10%);
 }
 
 .home-button {
@@ -22,7 +16,7 @@
 }
 
 .unlock-button {
-    background-color: #cecece;
+    background-color: #eaeaea;
     transform: translateX(22%);
     border-radius: 50%;
     border: none;

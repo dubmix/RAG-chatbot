@@ -1,5 +1,5 @@
 body {
-    background-color: #bf9797;
+    background-color:white;
     font-family: 'Rubik', sans-serif;
     font-weight: 300;
     overflow-x: hidden;
@@ -51,7 +51,7 @@ button[type="submit"] {
 #messageForm-2 {
   display: flex;
   align-items: center;
-  background-color: rgb(163, 58, 58);
+  background-color: white;
   border-radius: 20px;
   margin: 30px auto;
   min-width: 100px;
@@ -60,12 +60,14 @@ button[type="submit"] {
   height: 40px;
   animation: 0.5s fadeIn forwards;
   width: calc(100vw - 170px);
+  border: 1px solid #eaeaea;
 }
 
 #messageFormBis {
   display: flex;
   align-items: center;
-  background-color: rgb(229, 229, 229);
+  background-color: white;
+  border: 1px solid #eaeaea;
   border-radius: 20px;
   padding: 0 15px;
   margin: 30px auto;
