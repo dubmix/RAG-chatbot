@@ -1,17 +1,46 @@
-.image-container {
-    margin: 20px 200px;
+.title {
+    background-color: rgb(77, 134, 16);
+    position: absolute;
+    top: 30%;
+    bottom: calc(20px + 40%);
+    left: 15%;
     display: flex;
-    justify-content: center;
-    min-width: 85px;
-    margin-bottom: 0;
-    animation: 0.5s fadeIn forwards;
+    align-items: center;
+    right: 20%;
+    height: 170px;
+}
+
+.image-container {
+    position: relative;
+    animation: 2s fadeIn forwards;
+}
+
+.image-container img {
+    width: clamp(90px, 10vw, 150px);;
+    height: auto;
 }
 
 .title-container {
-    margin-left: 200px;
-    margin-right: 200px;
-    display: flex;
-    justify-content: center;
-    min-width: 85px;
-    animation: 0.5s fadeIn forwards;
+    position: relative;
+    animation: 2s fadeIn forwards;
+}
+
+.title-container h1 {
+    font-size: 7rem;
+    color: white;
+    margin-left: 30px;
+    font-size: clamp(4rem, 7vw, 7rem);
+}
+
+.header {
+    background-color: rgb(47, 119, 212);
+    position: absolute;
+    top: 100%;
+}
+
+.header h1 {
+    color: white;
+    font-size: clamp(1rem, 3vw, 3rem);
+    opacity: 0;
+    animation: fadeIn 2s 2s forwards;
 }

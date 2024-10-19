@@ -1,6 +1,34 @@
 body {
-    background-color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color:white;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    min-height: 20vh;
+}
+
+h1 {
+    font-size: 2.6rem;
+    color: #000000;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1rem;
+    color: #ee0909;
+    font-weight: 500;
+    transform: scaleY(0.95);
+    letter-spacing: 0.07rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 300;
+    line-height: 1.5;
+} 
+
+button[type="submit"] {
+    font-style: 'Rubik', sans-serif;
 }
 
 #fade {
@@ -8,15 +36,45 @@ body {
 }
 
 #messageForm {
-  background-color: whitesmoke;
-  border: 1px solid lightslategray;
-  padding: 15px;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 20px;
   padding: 0 15px;
   margin: 30px auto;
   min-width: 100px;
   max-width: 500px;
+  height: 40px;
   animation: 0.5s fadeIn forwards;
+}
+
+#messageForm-2 {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  margin: 30px auto;
+  min-width: 100px;
+  max-width: 670px;
+  padding: 0 15px;
+  height: 40px;
+  animation: 0.5s fadeIn forwards;
+  width: calc(100vw - 170px);
+  border: 1px solid #eaeaea;
+}
+
+#messageFormBis {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #eaeaea;
+  border-radius: 20px;
+  padding: 0 15px;
+  margin: 30px auto;
+  min-width: 100px;
+  max-width: 500px;
+  height: 40px;
+  /* animation: 0.5s fadeIn forwards; */
 }
 
 #messageInput {
@@ -24,6 +82,8 @@ body {
   background-color: transparent;
   flex: 1;
   outline: none;
+  font-size: 1rem;
+  color: black;
 }
 
 @keyframes fadeIn {
@@ -65,5 +125,15 @@ body {
       opacity: 0; /* Fade out */
       transform: translate(-50%, -50%) scale(0);
     }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+  }
+  
+  .shake {
+    animation: shake 0.3s ease;
   }
   

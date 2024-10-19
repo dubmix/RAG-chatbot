@@ -8,9 +8,11 @@ import Login from './Login.tsx';
 import Home from './Home.tsx';
 import './styles/app.css';
 
-const TIMEOUT = 30 * 1000;
+const TIMEOUT = 30000 * 1000;
 const VALIDATION_INTERVAL = 5 * 1000;
+// @ts-ignore
 const apiBaseHost = process.env.REACT_APP_BASE_URL || 'https://hilfy.co';
+// @ts-ignore
 const apiBasePort = process.env.REACT_APP_BASE_PORT || '';
 export const baseUrl = `${apiBaseHost}${apiBasePort}`;
 
@@ -104,8 +106,8 @@ const AppContent = ({ isAuthenticated, handleLogin }) => {
   const isHome = location.pathname === '/';
 
   return (
-    <div className="outer-container">
-        <div className={!isAuthenticated && !isHome ? 'blurred-background' : ''}>
+    <div>
+      <div className={!isAuthenticated && !isHome ? 'blurred-background' : ''}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/chat' element={<Chat />} />
@@ -118,7 +120,7 @@ const AppContent = ({ isAuthenticated, handleLogin }) => {
             <Login onLogin={handleLogin} />
           </div>
         )}
-    </div>
+      </div>
   );
 };
 

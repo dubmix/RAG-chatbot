@@ -6,7 +6,6 @@ import SavedBox from './components/SavedBox.tsx';
 function Saved() {
   return (
     <>
-      <Title />
       <Menu />
       <SavedBox />
     </>

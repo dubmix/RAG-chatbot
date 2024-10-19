@@ -16,10 +16,18 @@ const Menu = () => {
         </button>
         <div id="menu" className={`menu ${!menuOpen ? 'open' : ''}`}>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="chat">Chat</a></li>
-                <li><a href="saved">Saved</a></li>
-                <li><a href="about">About</a></li>
+                <li>
+                    <img src="home_logo.png" alt="Home" height="17" />
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <img src="chat_logo.png" alt="Home" height="17" />
+                    <a href="chat">Chat</a>
+                </li>
+                <li>
+                    <img src="star_logo.png" alt="Home" height="17" />
+                    <a href="saved">Saved</a>
+                </li>
             </ul>
         </div>
     </>
