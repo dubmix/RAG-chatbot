@@ -1,5 +1,4 @@
 .title {
-    background-color: rgb(77, 134, 16);
     position: absolute;
     top: 30%;
     bottom: calc(20px + 40%);
@@ -7,7 +6,7 @@
     display: flex;
     align-items: center;
     right: 20%;
-    height: 170px;
+    height: 150px;
 }
 
 .image-container {
@@ -33,7 +32,6 @@
 }
 
 .header {
-    background-color: rgb(47, 119, 212);
     position: absolute;
     top: 100%;
 }

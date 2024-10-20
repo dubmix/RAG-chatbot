@@ -8,7 +8,7 @@ import Login from './Login.tsx';
 import Home from './Home.tsx';
 import './styles/app.css';
 
-const TIMEOUT = 30000 * 1000;
+const TIMEOUT = 30 * 1000;
 const VALIDATION_INTERVAL = 5 * 1000;
 // @ts-ignore
 const apiBaseHost = process.env.REACT_APP_BASE_URL || 'https://hilfy.co';

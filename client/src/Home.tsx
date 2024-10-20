@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from './components/Title.tsx';
-import Menu from './components/Menu.tsx';
 import './styles/home.css';
 
 function Home() {
@@ -27,10 +26,10 @@ function Home() {
     </div>
     <footer className="footer">
       <ul className="footer-links">
-          <li><a href="/about">About</a></li>
-          <li><a href="/imprint">Imprint</a></li>
-          <li><a href="/privacy">Privacy</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/chat">About</a></li>
+          <li><a href="/chat">Imprint</a></li>
+          <li><a href="/chat">Privacy</a></li>
+          <li><a href="/chat">Contact</a></li>
       </ul>
       <p className="copyright">Copyright &copy; 2024 Hilfy</p>
     </footer>
