@@ -21,7 +21,7 @@ function Home() {
         <a className="try-me" href="chat">Try It</a>
       </div>
       <div className="image-div">
-        <img src="hilfy-phone.png" className="fixed-shape" alt="Overlay" />
+        <img src="helpme-phone.png" className="fixed-shape" alt="Overlay" />
       </div>
     </div>
     <footer className="footer">

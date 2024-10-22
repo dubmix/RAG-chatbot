@@ -54,7 +54,7 @@
 
 .image-div {
     position: absolute;
-    top: 300px;
+    top: 270px;
     left: clamp(50px, 50vw - 400px, calc(50vw - 400px));
     max-width: 200px;
 }
