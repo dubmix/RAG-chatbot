@@ -35,7 +35,7 @@ const Title: React.FC = () => {
             <h1 id="title">{title}</h1>
         </div>
         <div className="header">
-            <h1>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>   
+            <h1>AI-powered chatbot to support asylum seekers and refugees</h1>   
         </div>
     </div>
     </>

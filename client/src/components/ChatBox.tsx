@@ -140,8 +140,8 @@ const Chat: React.FC = () => {
                     <div className="help-bubble">How do I apply for asylum in Germany?</div>
                 </div>
                 <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
-                    <div className="help-bubble">What are my rights as a refugee?</div>
-                    <div className="help-bubble">How do I apply for asylum in Germany?</div>
+                    <div className="help-bubble">How can I access medical care in Germany?</div>
+                    <div className="help-bubble">How can I find a job?</div>
                 </div>
                 <div className={`help-bubbles image-help ${showHelpBubbles ? '' : 'hide'}`}>
                     <img src="hilfy.png" alt="Picture" height="100" />

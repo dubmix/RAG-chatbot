@@ -14,10 +14,10 @@ function Home() {
         <h2>MISSION</h2>
       </div>
       <div className="subtitle-div">
-        <h1>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus sapien, vehicula et eros sed,</h1>
+        <h1>We focus on bringing social inclusion for asylum seekers and refugees to get settled in Germany</h1>
       </div>
       <div className="content-div">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus sapien, vehicula et eros sed, ultrices blandit magna. Aliquam elit tellus, porttitor ac finibus pretium, scelerisque vitae enim. In bibendum dapibus cursus. Aenean vel lacus eu orci tempor mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus auctor nisi ullamcorper, tempor leo in, molestie mauris. Praesent mollis porta malesuada. Praesent commodo fringilla quam a bibendum. Fusce at mattis lorem. Donec elit nisi, imperdiet id neque sit amet, malesuada hendrerit arcu.</p>
+        <p>Unlike existing websites, helpme.ai focus on the common problems of asylum procedures by providing answers in a user-friendly, empathic way. Its AI-driven approach allows for personalized interactions, understanding diverse user inquiries, and providing solutions in multiple languages. This level of customization and accessibility is a significant leap from traditional, one-size-fits-all information services.</p>
         <a className="try-me" href="chat">Try It</a>
       </div>
       <div className="image-div">

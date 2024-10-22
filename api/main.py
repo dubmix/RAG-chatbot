@@ -33,7 +33,7 @@ def app():
 
     @app.get("/api/title")
     def title():
-        return JSONResponse(content={"title": "hilfy"})
+        return JSONResponse(content={"title": "helpme.ai"})
 
     app.include_router(login_router)
     app.include_router(process_request_router)

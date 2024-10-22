@@ -68,7 +68,6 @@
 
 @media (max-width: 768px) {
     .page-content {
-        background-color: orange;
         display: flex;
         min-height: 1200px; /*footer position*/
     }

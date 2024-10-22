@@ -52,6 +52,7 @@
     align-items: center;
     border-radius: 10px;
     margin-bottom: 10px;
+    min-width: 188px;
 }
 
 #chat-container.justify-active {
