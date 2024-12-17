@@ -25,6 +25,7 @@ Hilfy.pem
 .env.test.local
 .env.production.local
 .env
+.venv
 
 # logs
 logs
@@ -39,3 +40,5 @@ __init__.py
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.ruff_cache

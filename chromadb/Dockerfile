@@ -2,7 +2,7 @@ FROM python:3.11-slim-bookworm
 
 RUN apt-get update && apt-get install -y vim
 
-RUN pip install chromadb --break-system-packages
+RUN pip install chromadb==0.5.15 --break-system-packages
 
 RUN mkdir /chromadb
 RUN mkdir /logs

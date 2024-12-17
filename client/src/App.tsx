@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Chat from './Chat.tsx';
 import Saved from './Saved.tsx';
 import About from './About.tsx';
@@ -14,7 +14,7 @@ const VALIDATION_INTERVAL = 5 * 1000;
 const apiBaseHost = process.env.REACT_APP_BASE_URL || 'https://hilfy.co';
 // @ts-ignore
 const apiBasePort = process.env.REACT_APP_BASE_PORT || '';
-export const baseUrl = `${apiBaseHost}${apiBasePort}`;
+export const baseUrl = `${apiBaseHost}:${apiBasePort}`;
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('isAuthenticated') === 'true');
