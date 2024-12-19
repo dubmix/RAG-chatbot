@@ -67,7 +67,7 @@ button[type="submit"] {
   display: flex;
   align-items: center;
   background-color: #1f1f1f;
-  border: 1px solid #eaeaea;
+  border: 1px solid rgb(84, 84, 84);
   border-radius: 20px;
   padding: 0 15px;
   margin: 30px auto;

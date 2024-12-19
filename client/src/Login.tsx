@@ -1,53 +1,52 @@
-import React, { useState } from 'react';
-import './styles/login.css';
-import './styles/global.css';
-import { baseUrl } from './App.tsx';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react"
+import "./styles/login.css"
+import "./styles/global.css"
+import { baseUrl } from "./App.tsx"
+import { useNavigate } from "react-router-dom"
 
 
-function Unlock({ onLogin }) {
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
+const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
+    const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
             const response = await fetch (`${baseUrl}/api/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ password })
-            });
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ password }),
+            })
 
-            const result = await response.json();
-            const form = document.getElementById('messageFormBis') as HTMLFormElement | null;
+            const result = await response.json()
+            const form = document.getElementById("messageFormBis") as HTMLFormElement | null
 
             if (result.success) {
-                localStorage.setItem('token', result.token);
-                onLogin();
+                localStorage.setItem("token", result.token)
+                onLogin()
             } else {
                 if (form) {
-                    form.classList.add('shake');
-                    console.log(form);
+                    form.classList.add("shake")
+                    console.log(form)
                     setTimeout(() => {
-                        form.classList.remove('shake');
-                    }, 500);
+                        form.classList.remove("shake")
+                    }, 500)
                 }
             }
         } catch (error) {
-            setError("Login failed. Please try again.");
+            console.error("Login failed: ", error)
         }
-        setPassword('');
-    };
+        setPassword("")
+    }
 
     return (
         <div className="login-wrapper">
             <div className="login-container">
                 <form id="messageFormBis" onSubmit={handleSubmit}>
-                    <input 
+                    <input
                         id="messageInput"
-                        type="password" 
-                        value={password} 
+                        type="password"
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Enter password"
                     />
@@ -55,20 +54,20 @@ function Unlock({ onLogin }) {
                         <img src="unlock-light.png" alt="Unlock" />
                     </button>
                 </form>
-                <button id="fade" className="home-button" onClick={() => navigate('/')}>
-                  <img src="arrow_left.png" alt="Home" height="20" />
+                <button id="fade" className="home-button" onClick={() => navigate("/")}>
+                    <img src="arrow_left.png" alt="Home" height="20" />
                 </button>
             </div>
         </div>
     )
 }
 
-function Login({ onLogin }) {
-  return (
-    <>
-      <Unlock onLogin={onLogin} />
-    </>
-  );
+const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
+    return (
+        <>
+            <Unlock onLogin={onLogin} />
+        </>
+    )
 }
 
-export default Login;
+export default Login
