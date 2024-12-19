@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom"
 import Chat from "./Chat.tsx"
 import Saved from "./Saved.tsx"
 import About from "./About.tsx"
-import Login from './Login.tsx'
+import Login from "./Login.tsx"
 import Home from "./Home.tsx"
 import "./styles/app.css"
 
