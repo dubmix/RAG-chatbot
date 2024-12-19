@@ -6,22 +6,24 @@ function Home() {
   return (
     <>
     <div className='landing-page'>
-      <img src="shape-1.png" className="fixed-shape" alt="Overlay" />
+      {/* <img src="shape-1.png" className="fixed-shape" alt="Overlay" /> */}
       <Title />
     </div>
     <div className="page-content">
       <div className="title-div">
-        <h2>MISSION</h2>
+        <h2>CONCEPT</h2>
       </div>
       <div className="subtitle-div">
-        <h1>We focus on bringing social inclusion for asylum seekers and refugees to get settled in Germany</h1>
+        <h1>Enhance an existing AI model with additional data to receive personalized answers.</h1>
       </div>
       <div className="content-div">
-        <p>Unlike existing websites, helpme.ai focus on the common problems of asylum procedures by providing answers in a user-friendly, empathic way. Its AI-driven approach allows for personalized interactions, understanding diverse user inquiries, and providing solutions in multiple languages. This level of customization and accessibility is a significant leap from traditional, one-size-fits-all information services.</p>
-        <a className="try-me" href="chat">Try It</a>
+        <p>RAG (Retrieval-Augmented Generation) is an advanced AI approach that combines retrieval-based methods with generative models. By retrieving relevant information from a large dataset or knowledge base, RAG enhances the generation of accurate and context-aware responses. It leverages the power of both retrieval and generation, ensuring that the AI can provide precise answers to complex queries, making it highly effective for tasks requiring in-depth knowledge.</p>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <a className="try-me" href="chat">Try It</a>
+        </div>
       </div>
       <div className="image-div">
-        <img src="helpme-phone.png" className="fixed-shape" alt="Overlay" />
+        <img src="database.jpg" className="fixed-shape" alt="Overlay" />
       </div>
     </div>
     <footer className="footer">

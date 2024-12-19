@@ -1,5 +1,5 @@
 #chat-container {
-    background-color: #ffffff;
+    background-color: #1f1f1f;
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
@@ -13,8 +13,8 @@
     margin-top: 70px;
     height: calc(100vh - 172px);
     z-index: 0;
-    border-top: 1px solid lightgrey;
-    border-image: linear-gradient(to right, transparent, lightgrey 10%, lightgrey 50%, lightgrey 90%, transparent) 1;
+    border-top: 1px solid rgb(84, 84, 84);
+    border-image: linear-gradient(to right, transparent, rgb(84, 84, 84) 10%, rgb(84, 84, 84) 50%, rgb(84, 84, 84) 90%, transparent) 1;
     animation: 0.5s fadeIn forwards;
 }
 
@@ -44,7 +44,8 @@
 
 .help-bubble {
     flex: 1;
-    border: 1px dashed #242424;
+    border: 1px solid rgb(84, 84, 84);
+    color: white;
     margin: 0 3px;
     display: flex;
     padding: 20px;
@@ -52,7 +53,7 @@
     align-items: center;
     border-radius: 10px;
     margin-bottom: 10px;
-    min-width: 188px;
+    min-width: 270px;
 }
 
 #chat-container.justify-active {
@@ -88,7 +89,7 @@
 
 .user-bubble {
     align-self: flex-end;
-    background-color: #ececec;
+    background-color: white;
     color: black;
     user-select: none;
 

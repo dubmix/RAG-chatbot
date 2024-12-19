@@ -26,16 +26,20 @@ const Title: React.FC = () => {
 
   return (
     <>
-    <div className="title">
-        <div className="image-container">
-            <img src="hilfy.png" alt="Picture" height="170" />
-        </div>
-
-        <div className="title-container">
-            <h1 id="title">{title}</h1>
-        </div>
-        <div className="header">
-            <h1>AI-powered chatbot to support asylum seekers and refugees</h1>   
+    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <div className="title">
+                <div className="image-container">
+                    <img src="hilfy.png" alt="logo" height="170" />
+                </div>
+                <div className="title-container">
+                    <h1 id="title">{title}</h1>
+                </div>
+            </div>
+            <div className="header">
+                <h1>Create your own personalized smart assistant.</h1>   
+            </div>
+            <a style={{ width: "50px" }} className="try-me" href="chat">Try It</a>
         </div>
     </div>
     </>

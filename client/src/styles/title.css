@@ -1,44 +1,37 @@
 .title {
-    position: absolute;
-    top: 30%;
-    bottom: calc(20px + 40%);
-    left: 15%;
     display: flex;
+    direction: row;
     align-items: center;
-    right: 20%;
-    height: 150px;
-}
-
-.image-container {
-    position: relative;
-    animation: 2s fadeIn forwards;
-}
-
-.image-container img {
-    width: clamp(90px, 10vw, 150px);;
-    height: auto;
+    justify-content: center;
 }
 
 .title-container {
-    position: relative;
     animation: 2s fadeIn forwards;
 }
 
 .title-container h1 {
-    font-size: 7rem;
     color: white;
-    margin-left: 30px;
-    font-size: clamp(4rem, 7vw, 7rem);
+    font-size: clamp(4rem, 6vw, 7rem);
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .header {
-    position: absolute;
-    top: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .header h1 {
     color: white;
-    font-size: clamp(1rem, 3vw, 3rem);
+    font-size: 1.3rem;
     opacity: 0;
     animation: fadeIn 2s 2s forwards;
+}
+
+.image-container img {
+    width: clamp(90px, 9.4vw, 150px);
+    height: auto;
+    margin-right: 18px;
+    animation: 2s fadeIn forwards;
 }
