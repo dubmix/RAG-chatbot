@@ -16,7 +16,7 @@
 }
 
 .unlock-button {
-    background-color: #eaeaea;
+    background-color: white;
     transform: translateX(22%);
     border-radius: 50%;
     border: none;
@@ -25,6 +25,6 @@
 }
 
 .unlock-button img {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
 }

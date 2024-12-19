@@ -13,8 +13,8 @@
 
 .menu {
     position: absolute;
-    background-color: white;
-    border-right: 1px solid lightgrey;
+    background-color: #1f1f1f;
+    border-right: 1px solid rgb(84, 84, 84);
     left: -152px;
     width: 130px;
     transition: left 0.3s ease;
@@ -42,13 +42,12 @@
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    color: #333;
     margin-bottom: 5px;
 }
 
 .menu ul li a {
     text-decoration: none;
-    color: #333;
+    color: white;
     margin-left: 10px;
 }
 

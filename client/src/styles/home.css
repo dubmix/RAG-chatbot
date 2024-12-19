@@ -7,6 +7,8 @@
     height: 100vh;
     min-height: 500px;
     width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 .page-content {
@@ -15,7 +17,7 @@
     margin-bottom: -8px;
     margin-right: -8px;
     background-color: #FFFFFF;
-    min-height: 1000px;
+    min-height: 850px;
     z-index: 30;
 }
 
@@ -45,7 +47,8 @@
 
 .content-div {
     position: absolute;
-    top: 300px;
+    top: 260px;
+    text-align: justify;
     right: clamp(50px, 50vw - 400px, calc(50vw - 400px));
     max-width: 800px;
     left: calc(clamp(50px, 50vw - 400px, calc(50vw - 400px)) + 400px);
@@ -54,7 +57,7 @@
 
 .image-div {
     position: absolute;
-    top: 270px;
+    top: 230px;
     left: clamp(50px, 50vw - 400px, calc(50vw - 400px));
     max-width: 200px;
 }
@@ -83,19 +86,17 @@
     }
 
     .image-div img {
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(50px);
     }
 }
 
 .try-me {
-    background-color: #641CF1;
+    background-color: #4900c3;
     display: inline-block;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 0.05rem;
     border: none;
     border-radius: 10px;
@@ -104,7 +105,10 @@
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    color: white
+    color: white;
+    opacity: 0;
+    animation: fadeIn 2s 4s forwards;
+    
 }
 
 .footer {
@@ -115,7 +119,7 @@
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
-    color: white;
+    background-color: white;
     display: flex;
     justify-content: center;
     margin-left: -8px;

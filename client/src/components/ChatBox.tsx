@@ -136,15 +136,15 @@ const Chat: React.FC = () => {
             <div id="chat-container"
                 ref={chatContainerRef}>
                 <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
-                    <div className="help-bubble">What are my rights as a refugee?</div>
-                    <div className="help-bubble">How do I apply for asylum in Germany?</div>
+                    <div className="help-bubble">What is P-A's favourite food?</div>
+                    <div className="help-bubble">What language does P-A learn?</div>
                 </div>
                 <div className={`help-bubbles ${showHelpBubbles ? '' : 'hide'}`}>
-                    <div className="help-bubble">How can I access medical care in Germany?</div>
-                    <div className="help-bubble">How can I find a job?</div>
+                    <div className="help-bubble">How old is P-A?</div>
+                    <div className="help-bubble">Where does P-A currently work?</div>
                 </div>
                 <div className={`help-bubbles image-help ${showHelpBubbles ? '' : 'hide'}`}>
-                    <img src="hilfy.png" alt="Picture" height="100" />
+                    <img src="hilfy.png" alt="logo" height="100" />
                 </div>
             </div>
 
@@ -156,10 +156,10 @@ const Chat: React.FC = () => {
                         value={messageInput}
                         autoComplete='off'
                         onChange={(e) => setMessageInput(e.target.value)}
-                        placeholder="Ask me anything..."
+                        placeholder="Ask me anything about P-A..."
                     />
                     <button className="unlock-button" type="submit">
-                        <img src="arrow_up.png" alt="Unlock" />
+                        <img src="arrow_up_light.png" alt="unlock" />
                     </button>
             </form>
         </div>

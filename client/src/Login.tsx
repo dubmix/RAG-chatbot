@@ -52,7 +52,7 @@ function Unlock({ onLogin }) {
                         placeholder="Enter password"
                     />
                     <button className="unlock-button" type="submit">
-                        <img src="unlock.png" alt="Unlock" />
+                        <img src="unlock-light.png" alt="Unlock" />
                     </button>
                 </form>
                 <button id="fade" className="home-button" onClick={() => navigate('/')}>
