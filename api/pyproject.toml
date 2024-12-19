@@ -9,7 +9,6 @@ readme = "README.md"
 python = ">=3.9,<3.12"
 pydantic-settings = "^2.4.0"
 
-
 [tool.poetry.group.dev.dependencies]
 unstructured = "^0.12.6"
 requests = "^2.31.0"
@@ -29,6 +28,7 @@ python-dotenv = "^1.0.1"
 uvicorn = "^0.30.0"
 fastapi = "^0.111.0"
 psycopg2-binary = "^2.9.9"
+pytest-watch = "^4.2.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -55,14 +55,7 @@ line-length = 120
 ignore = ["E711", "E712", "F403"]
 
 [tool.ruff.lint]
-select = [
-    # pycodestyle
-    "E",
-    # Pyflakes
-    "F",
-    # isort
-    "I",
-]
+select = ["E", "F", "I"]
 
 [tool.ruff.lint.per-file-ignores]
 "*.ipynb" = ["E", "F", "I"]  # Be more lenient in notebooks
