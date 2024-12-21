@@ -1,5 +1,5 @@
 import pytest
-from history import ConversationHistory
+from src.history import ConversationHistory
 
 
 @pytest.fixture

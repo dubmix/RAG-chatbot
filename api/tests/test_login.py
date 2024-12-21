@@ -1,8 +1,8 @@
 import pytest
 from fastapi import HTTPException, status
 from fastapi.testclient import TestClient
-from login import create_access_token, decode_access_token, get_session
-from main import app
+from src.login import create_access_token, decode_access_token, get_session
+from src.main import app
 
 client = TestClient(app())
 

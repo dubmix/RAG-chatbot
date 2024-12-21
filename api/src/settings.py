@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    ENVIRONMENT: Literal["production", "local"] = "production"
+    ENVIRONMENT: Literal["production", "local", "development"] = "production"
     UVICORN_HOST: str = "0.0.0.0"
     UVICORN_PORT: int = 5050
 
