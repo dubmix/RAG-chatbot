@@ -14,20 +14,19 @@ const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
         try {
             const response = await fetch (`${baseUrl}/api/login`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ password }),
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ "username": "admin", "password": password }),
             })
 
             const result = await response.json()
             const form = document.getElementById("messageFormBis") as HTMLFormElement | null
 
-            if (result.success) {
-                localStorage.setItem("token", result.token)
+            if (response.ok) {
+                localStorage.setItem("token", result.access_token)
                 onLogin()
             } else {
                 if (form) {
                     form.classList.add("shake")
-                    console.log(form)
                     setTimeout(() => {
                         form.classList.remove("shake")
                     }, 500)

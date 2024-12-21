@@ -8,53 +8,26 @@ import Login from "./Login.tsx"
 import Home from "./Home.tsx"
 import "./styles/app.css"
 
-const TIMEOUT = 180 * 1000
-const VALIDATION_INTERVAL = 60 * 1000
+const VALIDATION_INTERVAL = 10 * 1000
 const apiBaseHost = process.env.REACT_APP_BASE_URL || "https://hilfy.co"
 const apiBasePort = process.env.REACT_APP_BASE_PORT || ""
 export const baseUrl = `${apiBaseHost}:${apiBasePort}`
 
 const App: React.FC = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem("isAuthenticated") === "true")
-    const [timeoutId, setTimeoutId] = useState<number | null>(null)
 
     const handleLogin = () => {
         setIsAuthenticated(true)
         localStorage.setItem("isAuthenticated", "true")
-        resetTimeout()
     }
 
     const handleLogout = async () => {
         const token = localStorage.getItem("token")
         if (token) {
-            try {
-                await fetch(`${baseUrl}/api/logout`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ token }),
-                })
-            } catch (error) {
-                console.error("Logout failed: ", error)
-            }
+            setIsAuthenticated(false)
+            localStorage.removeItem("isAuthenticated")
+            localStorage.removeItem("token")
         }
-        setIsAuthenticated(false)
-        localStorage.removeItem("isAuthenticated")
-        localStorage.removeItem("token")
-        if (timeoutId) {
-            clearTimeout(timeoutId)
-        }
-    }
-
-    const resetTimeout = () => {
-        if (timeoutId) {
-            clearTimeout(timeoutId)
-        }
-        const id = setTimeout(() => {
-            handleLogout()
-        }, TIMEOUT)
-        setTimeoutId(id)
     }
 
     const validateSession = async () => {
@@ -71,22 +44,10 @@ const App: React.FC = () => {
         }
     }
 
-    const handleUserActivity = () => {
-        resetTimeout()
-    }
-
     useEffect(() => {
         if (isAuthenticated) {
-            resetTimeout()
             const intervalId = setInterval(validateSession, VALIDATION_INTERVAL)
-            window.addEventListener("mousemove", handleUserActivity)
-            window.addEventListener("keydown", handleUserActivity)
             return () => {
-                window.removeEventListener("mousemove", handleUserActivity)
-                window.removeEventListener("keydown", handleUserActivity)
-                if (timeoutId) {
-                    clearTimeout(timeoutId)
-                }
                 clearInterval(intervalId)
             }
         }
