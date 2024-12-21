@@ -41,7 +41,6 @@ async def process_request(request: Request):
     logger.info(f"Processing request {bubble_id}")
     data = await request.json()
     question = data["request"]
-    print(question)
 
     query = collection.query(query_texts=[question], n_results=2, include=["documents"])
     context = query["documents"]
