@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from "react"
+import React, { useEffect }from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Routes, Route, useLocation } from "react-router-dom"
 import Chat from "./Chat.tsx"
@@ -7,59 +7,27 @@ import About from "./About.tsx"
 import Login from "./Login.tsx"
 import Home from "./Home.tsx"
 import "./styles/app.css"
+import { useSiteContext } from "./contexts/siteContext.tsx"
 
-const TIMEOUT = 180 * 1000
-const VALIDATION_INTERVAL = 60 * 1000
+const VALIDATION_INTERVAL = 10 * 1000
 const apiBaseHost = process.env.REACT_APP_BASE_URL || "https://hilfy.co"
 const apiBasePort = process.env.REACT_APP_BASE_PORT || ""
 export const baseUrl = `${apiBaseHost}:${apiBasePort}`
 
 const App: React.FC = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem("isAuthenticated") === "true")
-    const [timeoutId, setTimeoutId] = useState<number | null>(null)
-
-    const handleLogin = () => {
-        setIsAuthenticated(true)
-        localStorage.setItem("isAuthenticated", "true")
-        resetTimeout()
-    }
+    const { isAuthenticated, updateIsAuthenticated, accessToken, updateAccessToken } = useSiteContext()
 
     const handleLogout = async () => {
-        const token = localStorage.getItem("token")
+        const token = accessToken
         if (token) {
-            try {
-                await fetch(`${baseUrl}/api/logout`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ token }),
-                })
-            } catch (error) {
-                console.error("Logout failed: ", error)
-            }
+            updateIsAuthenticated(false)
+            updateAccessToken("")
         }
-        setIsAuthenticated(false)
-        localStorage.removeItem("isAuthenticated")
-        localStorage.removeItem("token")
-        if (timeoutId) {
-            clearTimeout(timeoutId)
-        }
-    }
-
-    const resetTimeout = () => {
-        if (timeoutId) {
-            clearTimeout(timeoutId)
-        }
-        const id = setTimeout(() => {
-            handleLogout()
-        }, TIMEOUT)
-        setTimeoutId(id)
     }
 
     const validateSession = async () => {
-        const token = localStorage.getItem("token")
-        if (token) {
+        const token = accessToken
+        if (accessToken) {
             try {
                 const response = await fetch(`${baseUrl}/api/protected?token=${token}`)
                 if (!response.ok) {
@@ -71,22 +39,10 @@ const App: React.FC = () => {
         }
     }
 
-    const handleUserActivity = () => {
-        resetTimeout()
-    }
-
     useEffect(() => {
         if (isAuthenticated) {
-            resetTimeout()
             const intervalId = setInterval(validateSession, VALIDATION_INTERVAL)
-            window.addEventListener("mousemove", handleUserActivity)
-            window.addEventListener("keydown", handleUserActivity)
             return () => {
-                window.removeEventListener("mousemove", handleUserActivity)
-                window.removeEventListener("keydown", handleUserActivity)
-                if (timeoutId) {
-                    clearTimeout(timeoutId)
-                }
                 clearInterval(intervalId)
             }
         }
@@ -94,22 +50,18 @@ const App: React.FC = () => {
 
     return (
         <Router>
-            <AppContent isAuthenticated={isAuthenticated} handleLogin={handleLogin} />
+            <AppContent />
         </Router>
     )
 }
 
-interface AppContentProps {
-    isAuthenticated: boolean
-    handleLogin: () => void
-}
-
-const AppContent: React.FC<AppContentProps> = ({ isAuthenticated, handleLogin }) => {
+const AppContent: React.FC = () => {
     const location = useLocation()
     const isHome = location.pathname === "/"
+    const { isAuthenticated } = useSiteContext()
 
     return (
-        <div>
+        <>
             <div className={!isAuthenticated && !isHome ? "blurred-background" : ""}>
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -120,10 +72,10 @@ const AppContent: React.FC<AppContentProps> = ({ isAuthenticated, handleLogin })
             </div>
             {!isAuthenticated && !isHome && (
                 <div className="login-overlay">
-                    <Login onLogin={handleLogin} />
+                    <Login />
                 </div>
             )}
-        </div>
+        </>
     )
 }
 

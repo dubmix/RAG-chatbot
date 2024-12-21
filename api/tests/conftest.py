@@ -9,5 +9,5 @@ def pytest_runtest_logreport(report):
         if hasattr(report, "capstdout"):
             stdout = report.capstdout
             if stdout:
-                print("\033[1;33m\n\nSTDOUT:\033[0m")
+                print(f"\033[1;33m\n\nSTDOUT {report.head_line}:\033[0m")
                 print(f"\033[1;33m\n{stdout}\033[0m")

@@ -1,56 +1,54 @@
-import uuid
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from typing import Dict
 
-from fastapi import Depends, HTTPException, Request
+from fastapi import Depends, HTTPException, status
 from fastapi.routing import APIRouter
-from settings import Settings
+from fastapi.security import OAuth2PasswordRequestForm
+from jose import JWTError, jwt
 
 router = APIRouter()
-sessions: Dict[str, Dict] = {}
+
+SECRET_KEY = "1234"
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 1
+
+USERNAME = "admin"
+PASSWORD = "admin"
 
 
-def get_session(token: str):
-    settings = Settings()
-    session = sessions.get(token)
-    if not session or datetime.now() - session["last_activity"] > settings.SESSION_TIMEOUT:
-        sessions.pop(token, None)
-        raise HTTPException(status_code=401, detail="Session expired or invalid")
-    session["last_activity"] = datetime.now()
-    return session
+def create_access_token(data: Dict, expires_delta: int) -> str:
+    to_encode = data.copy()
+    expire = datetime.now(tz=timezone.utc) + timedelta(minutes=expires_delta)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+
+def decode_access_token(token: str) -> dict:
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload
+    except JWTError:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
+
+
+def get_session(token: str):  # needs to be passed as header
+    payload = decode_access_token(token)
+    exp = payload.get("exp")
+    if exp is None or datetime.fromtimestamp(exp, tz=timezone.utc) < datetime.now(tz=timezone.utc):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token has expired")
+    return payload
 
 
 @router.post("/api/login")
-async def login(request: Request):
-    settings = Settings()
-    data = await request.json()
-    if data["password"] == settings.APP_PASSWORD:
-        existing_token = next(
-            (
-                token
-                for token, session in sessions.items()
-                if session["last_activity"] > datetime.now() - settings.SESSION_TIMEOUT
-            ),
-            None,
-        )
-        if existing_token:
-            raise HTTPException(status_code=401, detail="A session is already active")
-        token = str(uuid.uuid4())
-        sessions[token] = {"last_activity": datetime.now()}
-        return {"success": True, "token": token}
-    return {"success": False, "message": "Invalid password"}
+def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    if form_data.username != USERNAME or form_data.password != PASSWORD:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
 
-
-@router.post("/api/logout")
-async def logout(request: Request):
-    data = await request.json()
-    token = data.get("token")
-    if token in sessions:
-        sessions.pop(token, None)
-        return {"success": True}
-    raise HTTPException(status_code=401, detail="Invalid or expired session")
+    access_token = create_access_token(data={"sub": form_data.username}, expires_delta=ACCESS_TOKEN_EXPIRE_MINUTES)
+    return {"access_token": access_token, "token_type": "bearer"}
 
 
 @router.get("/api/protected")
-async def protected(token: str = Depends(get_session)):
-    return {"message": "You are logged in"}
+async def protected(token: dict = Depends(get_session)):
+    return {"message": "success"}

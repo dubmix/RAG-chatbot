@@ -48,10 +48,26 @@ jobs:
           name: Run pre-commit
           command: pre-commit run --all-files
 
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
+  test:
+    docker:
+      - image: python:3.11-slim
+    steps:
+      - run: apt update --yes --no-install-recommends
+      - run: apt install --yes git
+      - run: apt install --yes postgresql-client
+      - checkout
+      - poetry-install
+      - run:
+          name: Run tests
+          working_directory: api
+          command: poetry run pytest
+
 workflows:
   build_and_test:
     jobs:
       - pre-commit:
           name: Pre-Commit Checks
+      - test:
+          name: Test
+          requires:
+            - Pre-Commit Checks

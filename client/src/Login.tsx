@@ -3,10 +3,12 @@ import "./styles/login.css"
 import "./styles/global.css"
 import { baseUrl } from "./App.tsx"
 import { useNavigate } from "react-router-dom"
+import { useSiteContext } from "./contexts/siteContext.tsx"
 
 
-const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
+const Login: React.FC = () => {
     const [password, setPassword] = useState("")
+    const { updateAccessToken, updateIsAuthenticated } = useSiteContext()
     const navigate = useNavigate()
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,20 +16,20 @@ const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
         try {
             const response = await fetch (`${baseUrl}/api/login`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ password }),
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ "username": "admin", "password": password }),
             })
 
             const result = await response.json()
             const form = document.getElementById("messageFormBis") as HTMLFormElement | null
 
-            if (result.success) {
-                localStorage.setItem("token", result.token)
-                onLogin()
+            if (response.ok) {
+                updateAccessToken(result.access_token)
+                updateIsAuthenticated(true)
+                return
             } else {
                 if (form) {
                     form.classList.add("shake")
-                    console.log(form)
                     setTimeout(() => {
                         form.classList.remove("shake")
                     }, 500)
@@ -59,14 +61,6 @@ const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
                 </button>
             </div>
         </div>
-    )
-}
-
-const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
-    return (
-        <>
-            <Unlock onLogin={onLogin} />
-        </>
     )
 }
 
