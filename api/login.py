@@ -42,7 +42,6 @@ def get_session(token: str):  # needs to be passed as header
 
 @router.post("/api/login")
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
-    print(form_data)
     if form_data.username != USERNAME or form_data.password != PASSWORD:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
 

@@ -3,10 +3,12 @@ import "./styles/login.css"
 import "./styles/global.css"
 import { baseUrl } from "./App.tsx"
 import { useNavigate } from "react-router-dom"
+import { useSiteContext } from "./contexts/siteContext.tsx"
 
 
-const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
+const Login: React.FC = () => {
     const [password, setPassword] = useState("")
+    const { updateAccessToken, updateIsAuthenticated } = useSiteContext()
     const navigate = useNavigate()
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,8 +24,9 @@ const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
             const form = document.getElementById("messageFormBis") as HTMLFormElement | null
 
             if (response.ok) {
-                localStorage.setItem("token", result.access_token)
-                onLogin()
+                updateAccessToken(result.access_token)
+                updateIsAuthenticated(true)
+                return
             } else {
                 if (form) {
                     form.classList.add("shake")
@@ -58,14 +61,6 @@ const Unlock: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
                 </button>
             </div>
         </div>
-    )
-}
-
-const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
-    return (
-        <>
-            <Unlock onLogin={onLogin} />
-        </>
     )
 }
 
