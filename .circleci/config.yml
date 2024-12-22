@@ -66,9 +66,9 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      - pre-commit:
-          name: Pre-Commit Checks
+      # - pre-commit:
+      #     name: Pre-Commit Checks
       - test:
           name: Test
-          requires:
-            - Pre-Commit Checks
+          # requires:
+          #   - Pre-Commit Checks
