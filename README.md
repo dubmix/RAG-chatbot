@@ -1,6 +1,6 @@
 ## RAG
 
-**Retrieval Augmented Generation**, or RAG, is an architectural approach that can improve the effiacy of **Large Language Model** (LLM) applications by leveraging **custom** data.
+**Retrieval Augmented Generation**, or RAG, is an architectural approach that can improve the efficiency of **Large Language Model** (LLM) applications by leveraging **custom** data.
 This is done by retrieving data/documents relevant to a question or task and providing them as context for the LLM.
 
 ## Pre-setup
