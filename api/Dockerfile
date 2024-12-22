@@ -12,12 +12,10 @@ RUN poetry install
 RUN mkdir /app
 RUN mkdir /logs
 
-COPY launch.sh /app
-COPY *.py /app
+COPY src/*.py /app
 COPY .env /app
 
 WORKDIR /app
-RUN chmod +x launch.sh
 
 EXPOSE 5050
 
