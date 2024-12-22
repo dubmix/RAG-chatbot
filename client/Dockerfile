@@ -7,14 +7,14 @@ RUN mkdir /app
 COPY ./public/ /app/public/
 COPY ./src/ /app/src/
 COPY package.json /app/
-COPY package-lock.json /app/
+COPY yarn.lock /app/
 
 WORKDIR /app
 
-RUN npm install
-RUN npm install -g serve
+RUN yarn install
+RUN yarn global add serve
 
-RUN npm run build
+RUN yarn build
 
 EXPOSE 3000
 

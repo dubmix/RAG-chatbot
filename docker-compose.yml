@@ -1,7 +1,7 @@
 services:
   chroma:
     container_name: chroma
-    build: ./chromadb
+    image: pierrealexandredelannoy959/chromadb:latest
     networks:
       - network
     volumes:
