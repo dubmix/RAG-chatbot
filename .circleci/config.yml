@@ -51,6 +51,7 @@ jobs:
   test:
     docker:
       - image: python:3.11-slim
+      - image: pierrealexandredelannoy959/chromadb:circleci
     steps:
       - run: apt update --yes --no-install-recommends
       - run: apt install --yes git
