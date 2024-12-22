@@ -9,27 +9,17 @@ theme: base
 flowchart LR
     subgraph docker[Docker Compose]
         backend[Backend]
-        frontend[Frontend]
-        database[Database]
+        frontend[Client]
+        database[Vector Database]
         nginx[Reverse Proxy]
-        subgraph elk[ELK Stack]
-            elastic[Elasticsearch]
-            kibana[Kibana]
-            logstash[Logstash]
-            filebeat[Filebeat]
-        end
     end
 
     subgraph llmapi[LLM API]
         llmendpoint[Endpoint]
     end
 
-        backend <--> filebeat
         backend <--> nginx
         backend <--> llmendpoint
         backend <--> database
         nginx <--> frontend
-        filebeat --> logstash
-        logstash --> elastic
-        elastic --> kibana
 ```
