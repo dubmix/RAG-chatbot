@@ -1,8 +1,8 @@
 import React from "react"
-import Menu from "./components/Menu.tsx"
-import ChatBox from "./components/ChatBox.tsx"
+import Menu from "../../components/Menu/index.tsx"
+import ChatBox from "./ChatBox/index.tsx"
 
-function Chat() {
+const Chat: React.FC = () => {
     return (
         <>
             <Menu />

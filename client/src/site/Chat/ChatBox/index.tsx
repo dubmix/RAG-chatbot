@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react"
-import "../styles/chatbox.css"
-import "../styles/login.css"
-import "../styles/global.css"
-import { baseUrl } from "../App.tsx"
+import "./styles.css"
+import { baseUrl } from "../../index.tsx"
 
 
 const Chat: React.FC = () => {

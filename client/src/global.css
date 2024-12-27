@@ -31,6 +31,20 @@ button[type="submit"] {
     font-style: 'Rubik', sans-serif;
 }
 
+.unlock-button {
+  background-color: rgb(255, 255, 255);
+  transform: translateX(22%);
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+
+.unlock-button img {
+  width: 17px;
+  height: 17px;
+}
+
 #fade {
     animation: 0.5s fadeIn forwards;
 }

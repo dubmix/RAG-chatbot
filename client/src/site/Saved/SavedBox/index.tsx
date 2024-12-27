@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import "../styles/savedbox.css"
+import "./styles.css"
 import { DateTime } from "luxon"
-import { baseUrl } from "../App.tsx"
+import { baseUrl } from "../../index.tsx"
 
 
 const UPDATE_INTERVAL_SECONDS = 0.1

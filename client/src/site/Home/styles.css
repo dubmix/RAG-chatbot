@@ -1,7 +1,7 @@
 .landing-page {
     margin-top: -8px;
     margin-left: -8px;
-    background-image: url('../../public/landing-page-background.png');
+    background-image: url('../../../public/landing-page-background.png');
     background-size: cover;
     background-position: center;
     height: 100vh;

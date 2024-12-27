@@ -1,6 +1,6 @@
 import React from "react"
-import Title from "./components/Title.tsx"
-import "./styles/home.css"
+import Title from "../../components/Title/index.tsx"
+import "./styles.css"
 
 function Home() {
     return (

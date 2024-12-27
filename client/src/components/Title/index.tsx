@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import "../styles/title.css"
-import { baseUrl } from "../App.tsx"
+import "./styles.css"
+import { baseUrl } from "../../site/index.tsx"
 
 
 const Title: React.FC = () => {

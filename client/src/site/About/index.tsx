@@ -1,7 +1,7 @@
 import React from "react"
-import Menu from "./components/Menu.tsx"
-import Title from "./components/Title.tsx"
-import "./styles/about.css"
+import Menu from "../../components/Menu/index.tsx"
+import Title from "../../components/Title/index.tsx"
+import "./styles.css"
 
 const About = () => {
     return (

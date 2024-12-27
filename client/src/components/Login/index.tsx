@@ -1,15 +1,14 @@
 import React, { useState } from "react"
-import "./styles/login.css"
-import "./styles/global.css"
-import { baseUrl } from "./App.tsx"
+import "./styles.css"
+import { baseUrl } from "../../site/index.tsx"
 import { useNavigate } from "react-router-dom"
-import { useSiteContext } from "./contexts/siteContext.tsx"
+import { useSiteContext } from "../../contexts/siteContext.tsx"
 
 
 const Login: React.FC = () => {
     const [password, setPassword] = useState("")
-    const { updateAccessToken, updateIsAuthenticated } = useSiteContext()
     const navigate = useNavigate()
+    const { triggerFetchLocalStorage } = useSiteContext()
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -24,8 +23,9 @@ const Login: React.FC = () => {
             const form = document.getElementById("messageFormBis") as HTMLFormElement | null
 
             if (response.ok) {
-                updateAccessToken(result.access_token)
-                updateIsAuthenticated(true)
+                localStorage.setItem("accessToken", result.access_token)
+                localStorage.setItem("isAuthenticated", "true")
+                triggerFetchLocalStorage()
                 return
             } else {
                 if (form) {

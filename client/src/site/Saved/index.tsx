@@ -1,6 +1,6 @@
 import React from "react"
-import Menu from "./components/Menu.tsx"
-import SavedBox from "./components/SavedBox.tsx"
+import Menu from "../../components/Menu/index.tsx"
+import SavedBox from "./SavedBox/index.tsx"
 
 function Saved() {
     return (
