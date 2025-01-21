@@ -7,7 +7,7 @@ COPY poetry.lock /
 
 RUN pip install poetry
 RUN poetry config virtualenvs.in-project true
-RUN poetry install
+RUN poetry install --no-root
 
 RUN mkdir /app
 RUN mkdir /logs
