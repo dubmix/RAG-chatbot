@@ -8,6 +8,7 @@
 
 # data
 /chromadb/data
+/chromadb/chroma_data_old
 
 # production
 /build
