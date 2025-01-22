@@ -21,7 +21,7 @@ client = chromadb.HttpClient(host=settings.CHROMA_HOST, port=settings.CHROMA_POR
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
     api_key=settings.OPENAI_API_KEY, model_name="text-embedding-3-small"
 )
-collection = client.get_or_create_collection(name="asylumineurope", embedding_function=openai_ef)  # type: ignore
+collection = client.get_or_create_collection(name="test_collection", embedding_function=openai_ef)  # type: ignore
 conversation = ConversationHistory()
 
 
